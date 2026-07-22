@@ -1,0 +1,3 @@
+[submodule "osr-zine-template"]
+	path = osr-zine-template
+	url = https://github.com/wintermute-cell/osr-zine-template.git
