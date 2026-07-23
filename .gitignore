@@ -1,2 +1,6 @@
-output/
+!output/Main.pdf
 .vscode
+**/.DS_Store
+.DS_Store
+media/*~
+

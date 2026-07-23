@@ -8,17 +8,21 @@
 \usepackage{lipsum} % For generating dummy text. Remove in your document
 \usepackage[utf8]{inputenc}
 
-\newcommand{\Lowroll}{\texttt{Lowroll }}
-\newcommand{\Highroll}{\texttt{Highroll }}
-\newcommand{\Stress}{\texttt{Stress }}
-\newcommand{\Focus}{\texttt{Focus }}
-\newcommand{\Upface}{\texttt{Upface }}
-\newcommand{\Downface}{\texttt{Downface }}
+\usepackage{background}
 
-% NOTE:
-%   The zine.cls document class already includes a number of packages.
-%   You can check the zine.cls file to see what is already included.
-%
+\backgroundsetup{
+scale=1,
+opacity=1,
+angle=0,
+color=black,
+contents={%
+ \ifnum\value{page}<2 {} \else { 
+ \ifodd\value{page}
+    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade_flipped.png}
+  \else
+    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade.png}
+  \fi}\fi}}
+
 
 % TITLE
 \author{\textit{Written by FrogOfJuly}}
@@ -38,15 +42,17 @@
 \vspace{2mm} \hrule
 \end{abstract}
 
-\section{Introduction}
-    Yapping about Kerkenna for a quarter of a page.
+\section*{\centering Life on archipelago of Kerkenna}
+\vspace*{0.4 cm}
+
+\lipsum[2]
 
 % NOTE:
 %   To modify the overall styling/formatting, make changes to zine.cls
 %
 \begin{multicols*}{2}
 
-\section{Getting Started}
+\subsection*{Getting Started}
     Pick some dice, a Referee and make them do a game for you.
 
     Choose a knight, roll stats, pick gear and go for it.
@@ -54,10 +60,59 @@
 \subsection*{Scope}
     From one-shots to long adventures, but probably not a full campaign.
 
-\subsection*{Creating a Knight}
+\subsection*{Dice Rolls}
 
-\paragraph{Virtues.}
-Each knight has three attributes that describe his body, mind and soul. You roll \texttt{d6 + d12} to determine value of each of them.
+To resolve some events a roll is needed. 
+There are two mechanics that modify roll itself or dice in the roll. 
+
+\paragraph{Upface \& Downface.}
+
+Certain abilities can \texttt{Upface} and \texttt{Downface} a die. 
+To \texttt{Upface} a die, find it in the sequence:
+
+\colbox{
+    \[\texttt{d1, d4, d6, d8, d12}\]
+}
+
+And replace it with the next one. To \texttt{Downface} a die, replace it with previous one. 
+\texttt{d1} can't be \texttt{Downfaced} and \texttt{d12} can't be \texttt{Upfaced}. 
+
+You probably don't have a \texttt{d1} in your possession, 
+but you can easily model it by using its property of always rolling the same face with \texttt{1} on it.
+
+\paragraph{Highroll \& Lowroll.}
+
+There are several types of rolls: attack roll, virtue check, spellcasting roll and more. 
+Many of them, including named three, can be \texttt{Highrolled} and \texttt{Lowrolled}. 
+
+To \texttt{Highroll} a roll, add a duplicate of a die that already exists in the roll. 
+Perform a roll and then remove a die from it which shares amount of faces with the one added. 
+Typically, you want to remove the lowest one, but ultimately its for you to decide which one to remove.
+
+It is possible to double \texttt{Highroll} by adding two dice before the roll and then removing two that share amount of faces with those added. 
+Naturally, this approach extends to any degree of \texttt{Highrollness}. 
+
+To \texttt{Lowroll} -- do the same, but you must remove the highest dice for each degree of Lowrollness.
+
+If there is a need to simultaneously \texttt{Highroll} and \texttt{Lowroll} remove \texttt{High-} and \texttt{Low-} pairs until only one type of "-rollness" remains.
+
+It is possible to \texttt{Highroll} and \texttt{Lowroll} after the actual roll is performed. 
+To do that choose a die that is present in the roll and roll it in addition to those already there. 
+Then proceed as if they were rolled together.
+
+
+\end{multicols*}
+
+\newpage
+\section*{\centering Creating a Knight}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+
+\subsection*{Virtues}
+
+Each knight has three attributes that describe his body, mind and soul. 
 
 
 \colbox{ 
@@ -71,8 +126,11 @@ Keen instinct, lucid mind, shrewd eyes.
 Charming tongue, iron will, fierce heart.
 }
 
-When creating a knight roll for \texttt{Virtue} four times, record not only the sum, but also individual values of each die.
+Knight's creation starts by rolling \texttt{d6 + d12} four times; record not only the sum, but also individual values of each die.
 Each of those rolls determines one of the knight's \texttt{Virtues}, you choose which is which and discard the remaining one. 
+
+Then, determine knight's capacity for \texttt{Injury}, \texttt{Focus} and \texttt{Stress} according to steps below.
+
 \colbox{
 \begin{itemize}
     \item Half, rounded up, of \texttt{d6} you assigned to \texttt{Vigor} is the amount of \texttt{Lethal Injuries} the knight can survive before dying.
@@ -83,84 +141,143 @@ Each of those rolls determines one of the knight's \texttt{Virtues}, you choose 
 }
 \textbf{Guard.} Roll \texttt{2d4} to determine the maximum \texttt{Guard} the knight has.
 
-\section{Basic Rules}
+\paragraph{Feats. } Knight knows all three \texttt{Feats}: \texttt{Smite}, \texttt{Focus} and \texttt{Deny}. They can perform them during combat, details of which are described later.
 
-\subsection*{Dice Rolls}
+\newcolumn
+\subsection*{Magic of Kerkenna}
 
-To resolve some events a roll is needed. 
-There are two mechanics that modify roll itself or dice in the roll. 
+Yap, yap, guild, yap, yap orders contract mages
 
-\paragraph{Upface \& Downface.}
+\paragraph{A Mage.}
 
-Certain abilities can \Upface and \Downface a die. 
-To \Upface a die, find it in the sequence:
+Choose spells, your dice pool is your clarity.
 
-\colbox{
-    \[\texttt{d1, d4, d6, d8, d12}\]
-}
+\paragraph{A Witch.} 
 
-And replace it with the next one. To \Downface a die, replace it with previous one. 
-\texttt{d1} can't be \texttt{Downfaced} and \texttt{d12} can't be \texttt{Upfaced}. 
+Choose Patron your patron has passions, indulge them -- get rewarded with favour.
 
-You probably don't have a \texttt{d1} in your possession, 
-but you can easily model it by using its property of always rolling the same face with \texttt{1} on it.
+\subsection*{Weapons \& Gear}
 
-\paragraph{Highroll \& Lowroll.}
+Yap, yap, swords. Has only two legs and two arms, can wear only one clothes per layer. Tell about Armour.
 
-There are several types of rolls: attack roll, virtue check, spellcasting roll and more. 
-Many of them, including named three, can be \texttt{Highrolled} and \texttt{Lowrolled}. 
+\subsection*{Passion \& Ability}
 
-To \Highroll a roll, add a duplicate of a die that already exists in the roll. 
-Perform a roll and then remove a die from it which shares amount of faces with the one added. 
-Typically, you want to remove the lowest one, but ultimately its for you to decide which one to remove.
+Come up with an idea how to reference Bastionland without actually referencing it.
 
-It is possible to double \Highroll by adding two dice before the roll and then removing two that share amount of faces with those added. 
-Naturally, this approach extends to any degree of \texttt{Highrollness}. 
+\subsection*{Company}
 
-To \Lowroll -- do the same, but you must remove the highest dice for each degree of Lowrollness.
+\paragraph{Squires.} Yap yap
 
-If there is a need to simultaneously \Highroll and \Lowroll remove \texttt{High-} and \texttt{Low-} pairs until only one type of "-rollness" remains.
 
-It is possible to \Highroll and \Lowroll after the actual roll is performed. 
-To do that choose a die that is present in the roll and roll it in addition to those already there. 
-Then proceed as if they were rolled together.
+\end{multicols*}
 
+\newpage
+\section*{\centering Basic Rules}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
 
 \subsection*{Focus \& Stress}
     There are two important resources each knight has. 
     The amount of thought they can put into perfecting a task and amount of effort the can put into a failed task to fix it.
-    Those are tracked by \Focus and \Stress respectively.
+    Those are tracked by \texttt{Focus} and \texttt{Stress} respectively.
     
     \paragraph{Focus.} When a roll is performed that can be effected by a character, they can spend Focus to 
-    enhance it. It \textbf{must} be declared \textbf{before} rolling the dice. For each point of \Focus spent -- \Highroll that roll.
+    enhance it. It \textbf{must} be declared \textbf{before} rolling the dice. For each point of \texttt{Focus} spent -- \texttt{Highroll} that roll.
 
     One can not only plot how to enhance the roll, but also how to sabotage a roll. 
-    If one character can affect the roll of another in a destructive way, for each \Focus spent the roll is \texttt{Lowrolled}.
+    If one character can affect the roll of another in a destructive way, for each \texttt{Focus} spent the roll is \texttt{Lowrolled}.
 
-    Usually, a knight has no restriction how much \Focus they can spend to enhance an action, but
+    Usually, a knight has no restriction how much \texttt{Focus} they can spend to enhance an action, but
     determining how much focus is possible to spend to oppose a given action should be discussed with Referee.
 
-    The order is important, so opposing characters decide how much \Focus they spend simultaneously without telling each other. 
+    The order is important, so opposing characters decide how much \texttt{Focus} they spend simultaneously without telling each other. 
     They both tell Referee in private and the roll is resolved afterwards.
 
-    \paragraph{Stress.} Increasing one's \Stress is done similarly, but \textbf{must} be done \textbf{after} the roll.
+    \paragraph{Stress.} Increasing one's \texttt{Stress} is done similarly, but \textbf{must} be done \textbf{after} the roll.
 
-    After a roll is made, a knight can decide that they are not satisfied with the result and try to fix it by acquiring \Stress. 
-    For each gained \Stress, \Highroll that roll.
+    After a roll is made, a knight can decide that they are not satisfied with the result and try to fix it by acquiring \texttt{Stress}. 
+    For each gained \texttt{Stress}, \texttt{Highroll} that roll.
 
-    One can also acquire \Stress to oppose an action after the roll is made. 
+    One can also acquire \texttt{Stress} to oppose an action after the roll is made. 
 
-    Opposing characters decide how much \Stress they spend simultaneously without telling each other.
+    Opposing characters decide how much \texttt{Stress} they spend simultaneously without telling each other.
     They both tell Referee in private and the roll is resolved afterwards.
     
-    Character can't spend \Stress if they are at maximum stress. 
+    Character can't spend \texttt{Stress} if they are at maximum stress. 
     
     After resolving an action, check if your stress is at maximum. 
     If it is, set it to zero and the character suffers a \texttt{Trauma}(see \texttt{Injuries} section for details).
 
+
+    \newcolumn
+
+    \paragraph{Saves.}
+
+Yap, yap, roll under.
+
+\paragraph{Virtues.}
+
+Limits, penalties for 0s, Wounded status.
+
+\paragraph{Turns.}
+
+Move then attack.
+
+\paragraph{Exposed.}
+
+Caught off guard
+
+\paragraph{Death}
+
+Make a new one, add to the company
+
 \subsection*{Attacks}
 
-weapon dice
+Attacks always hit, so gather all your weapon dice -- those are your attack roll. 
+At this moment the knight declares and spends \texttt{Focus}, target declares opposition and matching \texttt{High-} and \texttt{Lowrolls} are removed.
+
+All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} is applied separately.
+
+Remove extra dice added through \texttt{Focus}.
+
+After that the \texttt{Stress} is acquired by attackers and their opponent, matching \texttt{High-} and \texttt{Lowrolls} are removed and extra dice are rolled.
+
+Remove extra dice from \texttt{Stress}.
+
+Now you can mix all dice together and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
+
+If opponent knows the \texttt{Deny} feat they use it after you decided. 
+
+You can choose some other die as a damage die, but you can't reassign \texttt{Gambits}.
+
+Order of attack
+
+\paragraph{Impared.} d4
+
+\paragraph{Blast.} d4
+
+\subsection*{Damage.}
+
+\paragraph{Taking a scar.}
+
+Yap yap
+
+\paragraph{Sustaining an Injury.}
+
+yap ayp
+
+\end{multicols*}
+
+\newpage
+
+
+
+\newpage
+\section*{\centering Combat}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
 
 \subsection*{Feats}
 
@@ -191,20 +308,67 @@ they rest.
 
 \subsection*{Gambits}
 
-list of gambits including battle treatment
+Attackers can discard any number of dice in \texttt{Attack Roll} with value 4 or higher to perform \texttt{Gambits}, each one causing one of the effects below.
+The affected foe must be the same as the target of the attack, except for \texttt{Patch a Wound} \texttt{Gambit}.
 
-\subsection*{Damage \& Injuries}
+For gambits other then \texttt{Bolster}, \texttt{Move} and \texttt{Patch a Wound} the target receives a \texttt{Vigor Save} to ignore the effect.
 
-There are many ways a knight can suffer in combat. 
+\begin{itemize}[nosep]
+    \item \textbf{Bolster}
+    \item \textbf{Move}
+    \item \textbf{Repel}
+    \item \textbf{Stop}
+    \item \textbf{Impair}
+    \item \textbf{Trap}
+    \item \textbf{Dismount}
+    \item \textbf{Patch a Wound}
+    \item \textbf{Other effect}
+\end{itemize}
 
-\paragraph{Scars.} Each time a knight sustained damaged that reduced their \texttt{Guard} to zero with overspill into \texttt{Vigor} they gain a \texttt{Scar}.
+If a die of \texttt{8} or higher is used in melee then a Strong Gambit is performed and the attacker chooses one of the following:
+
+\begin{itemize}[nosep]
+    \item \textbf{No Save} is granted to the target
+    \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield or weapon, or removing a helm. This does not increase the Damage from Bolster.
+\end{itemize}
+
+\paragraph{Treating an Injury}. Yap yap, Gambit. Yap, yap, after combat is over.
+
+\subsection*{Scars} Each time a knight sustains damage that reduced their \texttt{Guard} to zero with overspill into \texttt{Vigor} they gain a \texttt{Scar}.
 To determine which particular one they get, roll damage die that did damage again and consult the table below.
 
-\colbox{
-    Scar Table.
-}
+\begin{center}
+  \rowcolors{2}{gray!25}{white}
+  \label{scars}
+    \begin{tabular}{|c|p{5.7cm}|}
+        \hline
+        \textbf{Roll d12} & \textbf{Scar} \\
+        \hline
+        \texttt{1} & \\
+        \texttt{2} & \\
+        \texttt{3} & \\
+        \texttt{4} & \\
+        \texttt{5} & \\
+        \texttt{6} & \\
+        \texttt{7} & \\
+        \texttt{8} & \\
+        \texttt{9} & \\
+        \texttt{10} & \\
+        \texttt{11} & \\
+        \texttt{12} & \\
+        \hline
+    \end{tabular}
+\end{center}
 
-\paragraph{Injuries.} A body of a knight is tough and trained since childhood, but it can endure only so much. 
+\end{multicols*}
+
+\newpage
+\section*{\centering Lasting damage}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+\subsection*{Injuries} A body of a knight is tough and trained since childhood, but it can endure only so much. 
 When creating a knight, your roll for \texttt{Vigor} determines amount of \texttt{Serious and Lethal Injuries} they can sustain. 
 
 To track those injuries use \texttt{Injury Slots} that record name of the \texttt{Injury}, damage die that caused it and a \texttt{Consequence} that comes with it.
@@ -221,7 +385,7 @@ There are several ways to get an \texttt{Injury} when a knight receives a hit.
 It might be the case that more than one condition applies, take the worst one. You should never take more than one \texttt{Injury} at a time. 
 Check for each \texttt{Attack} separately. 
 
-\paragraph{Consequences of an Injury.} When knight suffers an \texttt{Injury} it fills corresponding injury slot, recording a die that caused an injury. 
+\subsection*{Consequences of an Injury.} When knight suffers an \texttt{Injury} it fills corresponding injury slot, recording a die that caused an injury. 
 If a knight is out of those slots, fill a one with next lethality. If they are out of those, the knight is \textbf{Slain}. 
 
 Each injury comes with consequences, after filling a slot roll \texttt{d4} and consult the table below.
@@ -241,22 +405,30 @@ Each injury comes with consequences, after filling a slot roll \texttt{d4} and c
     \end{tabular}
 \end{center}
 
-\paragraph{Treating an Injury}. Yap yap, Gambit. Yap, yap, after combat is over.
-
-\paragraph{Healing an Injury}. Yap yap, doctor, guard, quirks
-
-\colbox{
-    Table with Quirks
-}
-
-\paragraph{Trauma.} When \texttt{Stress} reaches the limit a knight can sustain -- it resets and leaves a \texttt{Trauma} behind. 
+\subsection*{Trauma.} When \texttt{Stress} reaches the limit a knight can sustain -- it resets and leaves a \texttt{Trauma} behind. 
 \texttt{Trauma} counts as a \texttt{Serious Injury} and can potentially cause a heart attack and kill a knight if they are out of \texttt{Injury slots}. 
 
-Referee decides how long it would persist and how it should be treated. By default, on the first morning after having a \texttt{Trauma} it heals itself, but leaves a permanent mark. 
+\section*{Recovery}
+
+Mention Guard
+
+\subsection*{Short Rest.}
+
+\paragraph{Focus.} Yap yap, each short rest is less effective.
+
+\paragraph{Stress.} Each time, half.
+
+\subsection*{Long Rest}
+
+\paragraph{Healing an Injury.} Yap yap, doctor, guard, quirks
+
+\paragraph{Coping with Trauma.} Referee decides how long it would persist and how it should be treated. By default, on the first morning after having a \texttt{Trauma} it heals itself, but leaves a permanent mark. 
 Acquire a \texttt{Quirk} as if a knight healed from an \texttt{Injury}. 
 
+\paragraph{Virture restoration}. Sustenance, Remedy, Stimulants.
 
 
+\newpage
 \section{Spellcasting}
 
 Spellcasting resources is represented by a set of d6 dice equal to the value of \texttt{Clarity}. Each time you restore Spirit via indulging a \texttt{Passion}, you can regain up to two missing dice from this set.
@@ -265,17 +437,7 @@ To cast a spell, a caster rolls any number of dice as an Action from that set an
 
 Here are spells that a knight can learn during mage training:
 
-\paragraph{Heat Metal.} \lipsum[2]
-
-\paragraph{Magic missile.} \lipsum[2]
-
-\paragraph{Hex.} \lipsum[2]
-
-\paragraph{True Strike.} \lipsum[2]
-
-\paragraph{Shield.} \lipsum[2]
-
-\paragraph{Haste.} \lipsum[2]
+Quick summary of several spell with reference to a list of spells in the end.
 
 \subsection*{Detect Magic}
 
@@ -287,7 +449,7 @@ When caster rolls dice to cast a spell, additionally to casting they can choose 
 These chosen dice can be stored to cast spells later as if you rolled them. They persist until spent, but the total amount of dice(stored and unrolled) can't exceed the value of \texttt{Clarity}.
 
 
-
+\newpage
 \section{Witchcraft}
 
 Witches cast spell as a manifestation of favors granted them by their patrons. So, logically, there should be different patrons with different sets of spells and different ways to please them.
@@ -310,69 +472,47 @@ Witches cast spell as a manifestation of favors granted them by their patrons. S
 
 \end{multicols*}
 
-\section{Adventures}
 
+\section*{\centering Appendix}
+\vspace{0.4cm}
 
+\subsection*{\centering Injury Quirks}
 
-\lipsum[9]
-\begin{table}[ht]
-    \centering
-    \rowcolors{2}{gray!25}{white}
-    \begin{tabular}{|c|p{14.5cm}|}
-        \hline
-        \textbf{Roll d6} & \textbf{Random Adventure} \\
-        \hline
-        \hline
-        1 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        2 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        3 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        4 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        5 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        6 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
-        \hline
-    \end{tabular}
-    \caption{Random Table -- Adventures}
-\end{table}
+\paragraph{Bloodlust.} \lipsum[2]
 
-\colbox{
-    \lipsum[10]
-}
+\paragraph{Thickskinned.} \lipsum[2]
 
+\paragraph{Desensitized.} \lipsum[2]
 
-\begin{center}
-    \textbf{The End}
-\end{center}
+\paragraph{High pain tolerance.} \lipsum[2]
+
+\paragraph{Desperate gasp.} \lipsum[2]
+
+\paragraph{Blade obsession.} \lipsum[2]
+
+\paragraph{Gore facination.} \lipsum[2]
+
+\paragraph{Stressjuncky.} \lipsum[2]
+
+\paragraph{Bloodthirsty.} \lipsum[2]
 
 \newpage
 \section*{\centering Appendix}
-\renewcommand{\thesubsection}{\arabic{subsection}}
 \vspace{0.4cm}
 
-\subsection{\centering Some random table for random events}
-\begin{table}[!htbp]
-    \centering
-    \rowcolors{2}{gray!25}{white}
-    \begin{tabular}{|c|p{14.5cm}|}
-        \hline
-        \textbf{Roll d12} & \textbf{Random Appendix Table} \\
-        \hline
-        \hline
-        1 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        2 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        3 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        4 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        5 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        6 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        7 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        8 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        9 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        10 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        11 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        12 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
-        \hline
-    \end{tabular}
-    \label{tab:monster-descriptions}
-\end{table}
+\subsection*{\centering Spells}
+
+\paragraph{Heat Metal.} \lipsum[2]
+
+\paragraph{Magic missile.} \lipsum[2]
+
+\paragraph{Hex.} \lipsum[2]
+
+\paragraph{True Strike.} \lipsum[2]
+
+\paragraph{Shield.} \lipsum[2]
+
+\paragraph{Haste.} \lipsum[2]
 
 \end{document}
 
