@@ -19,6 +19,7 @@ angle=0,
 color=black,
 contents={%
  \ifnum\value{page}<4 {
+    \ifnum\value{page}=1 {\includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade_white_both_corners.png}} \fi
     \ifnum\value{page}=2 {\includegraphics[width=\paperwidth,height=\paperheight]{media/kerkenna_map_stylized_left_with_corners.png}} \fi
     \ifnum\value{page}=3 {\includegraphics[width=\paperwidth,height=\paperheight]{media/kerkenna_map_stylized_right_with_corners.png}} \fi
  } \else { 
@@ -43,6 +44,8 @@ contents={%
     Welcome another \emph{Into the Odd} hack that is tuned for world of Kerkenna, a stranded archipelago 
     in the world of many other stranded archipelagos. With addition of Magic, Injuries and Quirks it became its own system
     that deserves its own little rulebook. 
+    
+    Great inspirations are taken from \emph{Mythic Bastionland}, \emph{Tales from Elsewhere} and \emph{Darkest Dungeon}.
 \end{center}
 \vspace{2mm} \hrule
 \end{abstract}
@@ -154,7 +157,7 @@ Then, determine knight's capacity for \texttt{Injury}, \texttt{Focus} and \textt
     \item Half, rounded up, of \texttt{d12} you assigned to \texttt{Spirit} is maximum \texttt{Stress} the knight can endure before suffering a \texttt{Trauma}, minimum is \texttt{2}.
 \end{itemize}
 }
-\textbf{Guard.} Roll \texttt{2d4} to determine the maximum \texttt{Guard} the knight has.
+\paragraph{Guard.} Roll \texttt{2d4} to determine the maximum \texttt{Guard} the knight has.
 
 \paragraph{Feats. } Knight knows all three \texttt{Feats}: \texttt{Smite}, \texttt{Focus} and \texttt{Deny}. They can perform them during combat, details of which are described later.
 
@@ -169,7 +172,7 @@ Weapons have properties to reflect their behavior.
     \item \textbf{Long} weapons require both hands and are \texttt{Impaired} in confined environments.
     \item \textbf{Slow} weapons cannot be used if the attacker has moved this turn.
 \end{itemize}
-\textbf{Common Weapons.} 
+\paragraph{Common Weapons.} 
 \begin{itemize}[nosep, leftmargin=*]
     \item [] Hefty, simple tools. \texttt{d6 hefty}: Pitchfork, Hatchet
     \item [] Long, Slow Tools. \texttt{d8 long, slow}: staff, logging axe, pick
@@ -179,27 +182,29 @@ Weapons have properties to reflect their behavior.
     \item [] Sling: \texttt{d4 hefty}
     \item [] Javelin: \texttt{d6 hefty}
 \end{itemize}
-\textbf{Uncommon Weapons.} 
+\paragraph{Uncommon Weapons.} 
 \begin{itemize}[nosep, leftmargin=*]
     \item [] Shortbow: \texttt{d6 long, slow}
     \item [] Shortsword: \texttt{2d6}
     \item [] Longbow: \texttt{d8 slow}
 \end{itemize}
-\textbf{Rare Weapons.} 
+\paragraph{Rare Weapons.} 
 \begin{itemize}[nosep, leftmargin=*]
     \item [] Longsword: \texttt{2d8 hefty}
     \item [] Greatsword: \texttt{2d10 long, slow}
     \item [] Curvebow: \texttt{2d6 long, slow}
     \item [] Crossbow: \texttt{2d8 slow}
 \end{itemize}
-\textbf{Armour.} Generally, each layer of armour gives an additional armour point. 
+
+\paragraph{Armour.} Generally, each layer of armour gives an additional armour point. 
 Steel protection is rare, so helms, plates and chainmail are very valuable assets. 
 You rather likely to find:
 \begin{itemize}[nosep, leftmargin=*]
     \item[] Coat: A1 (mail, gambeson, flexible armour suitable for general wear or beneath plates)
     \item[] Helm: A1 (kettle, nasal, bucket, coif)
 \end{itemize} 
-\textbf{Shields.} Takes one hand, gives one point in armour, common to find. 
+
+\paragraph{Shields.} Takes one hand, gives one point in armour, common to find. 
 Does not stack if there are two shield. It has \texttt{d4} as a weapon die.
 
 Spiked shields turn that die into \texttt{d6}.
@@ -264,9 +269,9 @@ Go through the following steps in order:
 
 \begin{enumerate}[nosep, leftmargin=*]
     \item Declare and spend \texttt{Focus}, target declares opposition and matching \texttt{High-} and \texttt{Lowrolls} are removed.
-    \item All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} is applied separately.
+    \item All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} are applied individually.
     \item Remove extra dice added through \texttt{Focus}.
-    \item Declare \texttt{Stress} gain, target declares opposition, remove matching \texttt{High-} and \texttt{Lowrolls} roll additional dice.
+    \item Declare \texttt{Stress} gain, target declares opposition, remove matching \texttt{High-} and \texttt{Lowrolls}, roll added dice.
     \item Remove extra dice from \texttt{Stress}.
     \item Now you can mix all dice together and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
     \item If the target or their nearby allies can \texttt{Deny} they may use it.
@@ -321,19 +326,21 @@ be performed as described below. Using Feats
 risks the knight becoming \texttt{Fatigued} which
 prevents them from using further \texttt{Feats} until
 they rest.
-\textbf{Smite.} \textit{Release your righteous fury} 
+
+\paragraph{Smite.} \textit{Release your righteous fury} 
 \begin{itemize}[nosep]
     \item Use before rolling a melee \texttt{Attack}.
     \item The \texttt{Attack} gains either \texttt{+1d12} or \texttt{Blast}.
     \item Pass \texttt{Vigor} check or become \texttt{Fatigued}.
 \end{itemize}
-\textbf{Focus.} \textit{Create an opening to exploit} 
+\paragraph{Focus.} \textit{Create an opening to exploit} 
 \begin{itemize}[nosep]
     \item Use after rolling an \texttt{Attack}.
     \item Perform a Gambit without using a die.
     \item Pass \texttt{Clarity} check or become \texttt{Fatigued}.
 \end{itemize}
-\textbf{Deny.} \textit{Rebuff an attack before it lands} 
+
+\paragraph{Deny.} \textit{Rebuff an attack before it lands} 
 \begin{itemize}[nosep]
     \item Use after an \texttt{Attack} roll against you or an ally within arm’s reach.
     \item Discard one Attack die from the roll.
@@ -367,7 +374,7 @@ If a die of \texttt{8} or higher is used in melee then a Strong Gambit is perfor
     \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield or removing a helm. Bolster can't add more than \texttt{1} damage. 
 \end{itemize}
 
-\textbf{Patching a Wound} \texttt{Gambit} allows one knight to tend to another one, or one knight to tend to themselves. 
+\paragraph{Patching a Wound} \texttt{Gambit} allows one knight to tend to another one, or one knight to tend to themselves. 
 Tending knight rolls a \texttt{Clarity} check and, if they pass, the one untended \texttt{Injury} becomes tended and its consequences disappear.
 If the save fails, the \texttt{Injury} is still tended, but the target knight make \texttt{Vigor} save. 
 If this one also fails the injury increases in lethality, potentially killing a knight.`'
@@ -390,18 +397,18 @@ Roll damage die that did damage again and consult the table below.
         \hline
         \textbf{Roll d12} & \textbf{Scar} \\
         \hline
-        \texttt{1} & \\
-        \texttt{2} & \\
-        \texttt{3} & \\
-        \texttt{4} & \\
-        \texttt{5} & \\
-        \texttt{6} & \\
-        \texttt{7} & \\
-        \texttt{8} & \\
-        \texttt{9} & \\
-        \texttt{10} & \\
-        \texttt{11} & \\
-        \texttt{12} & \\
+        \texttt{1} & A lucky escape, Lose \texttt{d6} \texttt{Spirit}.\\
+        \texttt{2} & A permanent mark. If your max \texttt{GD} is \texttt{2} or less, increase it by \texttt{d6}. \\
+        \texttt{3} & A sudden spray of blood, Lose \texttt{d6} \texttt{Vigor}.\\
+        \texttt{4} & Pain drowns the senses, Lose \texttt{d6} \texttt{Clarity}. If your max \texttt{GD} is \texttt{4} or less, increase it by \texttt{d6}.\\
+        \texttt{5} & Innards pierced and compressed, Lose \texttt{2d6} \texttt{Vigor}.\\
+        \texttt{6} & Flesh torn from bone. When you get stitched up, if your max \texttt{GD} is \texttt{6} or less, increase it by \texttt{d6}.\\
+        \texttt{7} & A heavy blow numbs the mind, Lose \texttt{2d6} \texttt{Clarity}.\\
+        \texttt{8} & Something taken in violent struggle. When you get patched up, if your max\texttt{GD} is \texttt{8} or less, increase it by \texttt{d6}.\\
+        \texttt{9} & With a crack, a torturous break, Lose \texttt{2d6} \texttt{Spirit}.\\
+        \texttt{10} & A limb rendered useless. If your max \texttt{GD} is \texttt{10} or less, increase it by \texttt{d6}. \\
+        \texttt{11} & Death searches for you. Gain \texttt{2} \texttt{Stress}. \\
+        \texttt{12} & A most dolorous stroke, When you achieve revenge, if your max \texttt{GD} is 12 or less, increase it by d6.\\
         \hline
     \end{tabular}
 \end{center}
@@ -410,10 +417,9 @@ Roll damage die that did damage again and consult the table below.
 
 A body of a knight is tough and trained since childhood, but it can endure only so much. 
 Dice that determine knight's \texttt{Vigor} also defines amount of \texttt{Serious and Lethal Injuries} they can sustain. 
+To track those injuries use \texttt{Injury Slots} that record nature of the \texttt{Injury}, damage die that caused it and its \texttt{Consequence}.
 
-To track those injuries use \texttt{Injury Slots} that record nature of the \texttt{Injury}, damage die that caused it and a \texttt{Consequence} that comes with it.
-
-There are several ways to get an \texttt{Injury} when a knight receives a hit. 
+A knight gets an \texttt{Injury} according to conditions below. Each \texttt{Attack} causes one \texttt{Injury} at most. 
 
 \begin{itemize}[nosep]
     \item[\ding{170}] If a knight lost \texttt{6, 7, 8, or 9} \texttt{Vigor} through combat damage -- take a \texttt{Serious Injury}.
@@ -421,12 +427,10 @@ There are several ways to get an \texttt{Injury} when a knight receives a hit.
     \item[\ding{170}] If you lost half or more of your remaining \texttt{Vigor}, but not all of it - take a \texttt{Serious Injury} or fall unconscious
     \item[\textbf{\textdagger}] If you lost all your \texttt{Vigor} or more through combat damage - take a \texttt{Lethal Injury}
 \end{itemize}
-
 If more than one condition applies, take the worst one. You should never take more than one \texttt{Injury} at a time. 
-Check for each \texttt{Attack} separately. 
 
-\subsection*{Consequences of an Injury.} When knight suffers an \texttt{Injury} it fills corresponding injury slot, recording a die that caused an injury. 
-If a knight is out of those slots, fill a one with next lethality. If they are out of those, the knight is \textbf{Slain}. 
+\subsection*{Consequences of an Injury.} When knight suffers an \texttt{Injury} it fills corresponding \texttt{Injury slot}, recording a die that caused the injury. 
+If a knight is out of those slots, fill a one with greater lethality. If they are out of those, the knight is \textbf{Slain}. 
 
 Each injury comes with consequences, after filling a slot roll \texttt{d4} and consult the table below.
 
@@ -446,7 +450,7 @@ Each injury comes with consequences, after filling a slot roll \texttt{d4} and c
 \end{center}
 
 \subsection*{Trauma.} When \texttt{Stress} reaches the limit a knight can sustain -- it resets and leaves a \texttt{Trauma} behind. 
-\texttt{Trauma} counts as a \texttt{Serious Injury} and can potentially cause a heart attack and kill a knight if they are out of \texttt{Injury slots}. 
+\texttt{Trauma} counts as a \texttt{Serious Injury} and can potentially cause a heart attack and kill a knight if they are out of \texttt{Injury Slots}. 
 
 \end{multicols*}
 
@@ -576,11 +580,12 @@ However, whenever you take \texttt{Clarity} save during socialization treat it i
 
 Spellcasting resources is represented by a set of d6 dice equal to the value of \texttt{Clarity}. Each time you restore Spirit via indulging a \texttt{Passion}, you can regain up to two missing dice from this set.
 
-To cast a spell, a caster rolls any number of dice as an Action from that set and then decides what to cast. Only one spell can be cast per roll. If the spell does not state otherwise, Smite feat is not applicable for attacks performed within them.
+To cast a spell, a caster rolls any number of dice as an Action from that set and then decides what to cast. 
+Only one spell can be cast per roll. If the spell does not state otherwise, Smite feat is not applicable for attacks performed within them.
 
-Here are spells that a knight can learn during mage training:
+If in doubt, know that this roll is affected by \texttt{Focus} and \texttt{Stress} mechanics.
 
-Quick summary of several spell with reference to a list of spells in the end.
+There are a number of spells a knight can learn during their mage training, but all of them learn \textit{Detect Magic}.
 
 \subsection*{Detect Magic}
 
@@ -589,7 +594,8 @@ Pick any number of dice, for each one which rolled for a maximum value you can a
 \subsection*{Recuperation of Magic}
 
 When caster rolls dice to cast a spell, additionally to casting they can choose half, rounded down, of remaining dice and discard the rest. 
-These chosen dice can be stored to cast spells later as if you rolled them. They persist until spent, but the total amount of dice(stored and unrolled) can't exceed the value of \texttt{Clarity}.
+These chosen dice can be stored to cast spells later as if they are included in a roll.
+They persist until spent, but the total amount of dice(stored and unrolled) can never exceed the value of knight's \texttt{Clarity}.
 
 \end{multicols*}
 
@@ -599,18 +605,34 @@ These chosen dice can be stored to cast spells later as if you rolled them. They
 
 \begin{multicols*}{2}
 
-\paragraph{Heat Metal.} \lipsum[2]
+\paragraph{Heat Metal.} Intricate ladder of arcane pulses rapidly heats metal until it glows red hot. 
+Pulses should be chained together carefully, pick no less than three dice with consecutive values. 
+If it is a piece of armour, the wearer takes damage equal to the sum of chosen dice. 
+If it is a weapon, the bearer chooses to drop it or persevere through pain, taking half of the sum of the chosen dice. Any damage from this spell ignores \texttt{Guard}.
 
-\paragraph{Magic missile.} \lipsum[2]
+\paragraph{Magic missile.} 
+Identical glowing bolts launch towards chosen targets, piercing bone and muscle. 
+Pick any number of dice with the same value rolled. 
+You can pick a different target for each bolt; it deals damage equal to the rolled value.
 
-\paragraph{Hex.} \lipsum[2]
+\paragraph{Hex.} 
+A curse of misfortune impairs defense and makes the target more vulnerable. 
+Pick three dice that have a value of one. 
+For the remaining combat, anyone who attacks the bearer of this curse can add a die from picked ones to the dice that represent an attack before rolling them. The same die can be used by multiple attacks, but only a single hex can be cast upon any one creature.
 
-\paragraph{True Strike.} \lipsum[2]
+\paragraph{True Strike.} 
+Pick any number of dice, then perform an Attack as usual. 
+You can replace any die of the attack with any die from those you picked. 
+Can be used with Smite feat.
 
-\paragraph{Shield.} \lipsum[2]
+\paragraph{Shield.} Pick two dice and add the smaller rolled value among them to GD of a willing creature nearby.
+ The shield's guard is spent before theirs. 
+ Shield's guard persists until their guard would be restored normally.
 
-\paragraph{Haste.} \lipsum[2]
+\paragraph{Haste.} Pick any amount of dice that amount to target's Vigor or greater. 
+For remainder of combat double the amount of \texttt{Weapon dice} from a single weapon the target weilds. 
 
+\paragraph{Conjure embodiment of magic.} Pick up to two dice three times, values for each pick determine virtues of the embodiment. Then pick an additional die, this is its guard. Embodiment obeys your commands and vanishes when any of its virtues reach zero. At dawn of each day you need to maintain it: pick up to two dice, that's the new Vigor of the embodiment. Otherwise, half each of its virtues, rounding down. Embodiments are unnatural for this world, so at dawn, reduce its Spirit by 2 and its Clarity by 1. At the end of each combat, reduce it's Spirit by 1. You choose the shape and overall look of the embodiment, but it still looks very unnatural and magical for anybody who looks at it. It has no armour, attacks for 2d8 and can use Smite feat. It is as intelligent as an orca, can't speak, but comprehends languages you know. Does not really understand human ways, but can mimic them with mixed results.
 
 \end{multicols*}
 
@@ -641,6 +663,16 @@ Witches cast spell as a manifestation of favors granted them by their patrons. S
 \lipsum[7-8]
 
 \end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Appendix}
+\vspace*{0.4 cm}
+
+\ %
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Appendix}
+\vspace*{0.4 cm}
 
 \end{document}
 
