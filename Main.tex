@@ -9,6 +9,8 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{background}
+\usepackage{yfonts}
+
 
 \backgroundsetup{
 scale=1,
@@ -104,7 +106,7 @@ Then proceed as if they were rolled together.
 \end{multicols*}
 
 \newpage
-\section*{\centering Creating a Knight}
+\section*{\centering \fontsize{35}{45}\selectfont Creating a Knight}
 \vspace*{0.4 cm}
 
 \begin{multicols*}{2}
@@ -144,140 +146,160 @@ Then, determine knight's capacity for \texttt{Injury}, \texttt{Focus} and \textt
 \paragraph{Feats. } Knight knows all three \texttt{Feats}: \texttt{Smite}, \texttt{Focus} and \texttt{Deny}. They can perform them during combat, details of which are described later.
 
 \newcolumn
-\subsection*{Magic of Kerkenna}
-
-Yap, yap, guild, yap, yap orders contract mages
-
-\paragraph{A Mage.}
-
-Choose spells, your dice pool is your clarity.
-
-\paragraph{A Witch.} 
-
-Choose Patron your patron has passions, indulge them -- get rewarded with favour.
 
 \subsection*{Weapons \& Gear}
 
-Yap, yap, swords. Has only two legs and two arms, can wear only one clothes per layer. Tell about Armour.
+Weapons have properties to reflect their behavior.
 
-\subsection*{Passion \& Ability}
+\begin{itemize}[nosep]
+    \item \textbf{Hefty} weapons require one hand. Only one \textbf{Hefty} item can be wielded at once.
+    \item \textbf{Long} weapons require both hands and are \texttt{Impaired} in confined environments.
+    \item \textbf{Slow} weapons cannot be used if the attacker has moved this turn.
+\end{itemize}
+\textbf{Common Weapons.} 
+\begin{itemize}[nosep, leftmargin=*]
+    \item [] Hefty, simple tools. \texttt{d6 hefty}: Pitchfork, Hatchet
+    \item [] Long, Slow Tools. \texttt{d8 long, slow}: staff, logging axe, pick
+    \item [] Hand Weapons. \texttt{d6}: dagger, club, handaxe
+    \item [] Hefty Weapons. \texttt{d8 hefty}: spear, mace, axe
+    \item [] Long Weapons. \texttt{d10 long}: poleaxe, billhook
+    \item [] Sling: \texttt{d4 hefty}
+    \item [] Javelin: \texttt{d6 hefty}
+\end{itemize}
+\textbf{Uncommon Weapons.} 
+\begin{itemize}[nosep, leftmargin=*]
+    \item [] Shortbow: \texttt{d6 long, slow}
+    \item [] Shortsword: \texttt{2d6}
+    \item [] Longbow: \texttt{d8 slow}
+\end{itemize}
+\textbf{Rare Weapons.} 
+\begin{itemize}[nosep, leftmargin=*]
+    \item [] Longsword: \texttt{2d8 hefty}
+    \item [] Greatsword: \texttt{2d10 long, slow}
+    \item [] Curvebow: \texttt{2d6 long, slow}
+    \item [] Crossbow: \texttt{2d8 slow}
+\end{itemize}
+\textbf{Armour.} Generally, each layer of armour gives an additional armour point. 
+Steel protection is rare, so helms, plates and chainmail are very valuable assets. 
+You rather likely to find:
+\begin{itemize}[nosep, leftmargin=*]
+    \item[] Coat: A1 (mail, gambeson, flexible armour suitable for general wear or beneath plates)
+    \item[] Helm: A1 (kettle, nasal, bucket, coif)
+\end{itemize} 
+\textbf{Shields.} Takes one hand, gives one point in armour, common to find. 
+Does not stack if there are two shield. It has \texttt{d4} as a weapon die.
 
-Come up with an idea how to reference Bastionland without actually referencing it.
+Spiked shields turn that die into \texttt{d6}.
 
-\subsection*{Company}
 
-\paragraph{Squires.} Yap yap
-
+\paragraph{Magic} can be found on Kerkenna and, though not frequently, knights known to employ it during their endeavours. Some knights are \textbf{Mages} and some are \textbf{Witches}.
 
 \end{multicols*}
 
 \newpage
-\section*{\centering Basic Rules}
+\section*{\centering \fontsize{35}{45}\selectfont \fontsize{35}{45}\selectfont Basic Rules}
 \vspace*{0.4 cm}
 
 \begin{multicols*}{2}
 
 \subsection*{Focus \& Stress}
-    There are two important resources each knight has. 
-    The amount of thought they can put into perfecting a task and amount of effort the can put into a failed task to fix it.
-    Those are tracked by \texttt{Focus} and \texttt{Stress} respectively.
-    
-    \paragraph{Focus.} When a roll is performed that can be effected by a character, they can spend Focus to 
-    enhance it. It \textbf{must} be declared \textbf{before} rolling the dice. For each point of \texttt{Focus} spent -- \texttt{Highroll} that roll.
 
-    One can not only plot how to enhance the roll, but also how to sabotage a roll. 
-    If one character can affect the roll of another in a destructive way, for each \texttt{Focus} spent the roll is \texttt{Lowrolled}.
+There are two important resources each knight has: 
+the amount of thought the knight can put into perfecting a task and the amount of effort the can put into a failed task to fix it.
+Those are tracked by \texttt{Focus} and \texttt{Stress} respectively.
 
-    Usually, a knight has no restriction how much \texttt{Focus} they can spend to enhance an action, but
-    determining how much focus is possible to spend to oppose a given action should be discussed with Referee.
+\paragraph{Focus.} When a roll is performed that can be effected by a character, they can spend Focus to 
+enhance it. It \textbf{must} be declared \textbf{before} rolling the dice. For each point of \texttt{Focus} spent -- \texttt{Highroll} that roll.
 
-    The order is important, so opposing characters decide how much \texttt{Focus} they spend simultaneously without telling each other. 
-    They both tell Referee in private and the roll is resolved afterwards.
+One can not only plot how to enhance the roll, but also how to sabotage a roll. 
+If one character can affect the roll of another in a destructive way, for each \texttt{Focus} spent the roll is \texttt{Lowrolled}.
 
-    \paragraph{Stress.} Increasing one's \texttt{Stress} is done similarly, but \textbf{must} be done \textbf{after} the roll.
+Usually, a knight has no restriction how much \texttt{Focus} they can spend to enhance an action, but
+determining how much focus is possible to spend to oppose a given action should be discussed with Referee.
 
-    After a roll is made, a knight can decide that they are not satisfied with the result and try to fix it by acquiring \texttt{Stress}. 
-    For each gained \texttt{Stress}, \texttt{Highroll} that roll.
+The order is important, so opposing characters decide how much \texttt{Focus} they spend simultaneously.
 
-    One can also acquire \texttt{Stress} to oppose an action after the roll is made. 
+\paragraph{Stress.} Increasing one's \texttt{Stress} is done similarly, but \textbf{must} be done \textbf{after} the roll.
 
-    Opposing characters decide how much \texttt{Stress} they spend simultaneously without telling each other.
-    They both tell Referee in private and the roll is resolved afterwards.
-    
-    Character can't spend \texttt{Stress} if they are at maximum stress. 
-    
-    After resolving an action, check if your stress is at maximum. 
-    If it is, set it to zero and the character suffers a \texttt{Trauma}(see \texttt{Injuries} section for details).
+After a roll is made, a knight can decide that they are not satisfied with the result and try to fix it by acquiring \texttt{Stress}. 
+For each gained \texttt{Stress}, \texttt{Highroll} that roll.
 
+One can also acquire \texttt{Stress} to oppose an action after the roll is made. 
 
-    \newcolumn
+Opposing characters decide how much \texttt{Stress} they spend simultaneously.
 
-    \paragraph{Saves.}
+Character can't spend \texttt{Stress} if they are at maximum stress. 
 
-Yap, yap, roll under.
+After resolving an action, check if your stress is at maximum. 
+If it is, set it to zero and the character suffers a \texttt{Trauma}(see \texttt{Injuries} section for details).
 
-\paragraph{Virtues.}
+\newcolumn
 
-Limits, penalties for 0s, Wounded status.
+\paragraph{Saves.}
 
-\paragraph{Turns.}
+To pass a Save, roll a \texttt{d20} equal or below the
+relevant \texttt{Virtue}. Failure means negative
+consequences, not always a failed action.
 
-Move then attack.
-
-\paragraph{Exposed.}
-
-Caught off guard
-
-\paragraph{Death}
-
-Make a new one, add to the company
+\paragraph{Turns.} A turn is enough time to Move and then
+perform an Action, always in that order.
 
 \subsection*{Attacks}
 
-Attacks always hit, so gather all your weapon dice -- those are your attack roll. 
-At this moment the knight declares and spends \texttt{Focus}, target declares opposition and matching \texttt{High-} and \texttt{Lowrolls} are removed.
+Take the \texttt{Weapon Dice} noted on your weapon(s), shield, and granted by bonuses.
+Go through the following steps in order:
 
-All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} is applied separately.
+\begin{enumerate}[nosep, leftmargin=*]
+    \item Declare and spend \texttt{Focus}, target declares opposition and matching \texttt{High-} and \texttt{Lowrolls} are removed.
+    \item All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} is applied separately.
+    \item Remove extra dice added through \texttt{Focus}.
+    \item Declare \texttt{Stress} gain, remove matching \texttt{High-} and \texttt{Lowrolls} roll additional dice.
+    \item Remove extra dice from \texttt{Stress}.
+    \item Now you can mix all dice together and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
+    \item If the target or their nearby allies can \texttt{Deny} they may use it.
+    \item If the damage die is discarded - assign a new one, but \texttt{Gambits} can't be changed.
+    \item Add any extra Damage from attackers who are \texttt{Bolstering} the Attack.
+    \item Subtract the target’s total \texttt{Armour score}.
+    \item The Attack causes that much \texttt{Combat Damage}.
+\end{enumerate}
 
-Remove extra dice added through \texttt{Focus}.
+\paragraph{Imaired} attacks roll d4 only and cannot
+gain bonus dice or benefit from Feats.
 
-After that the \texttt{Stress} is acquired by attackers and their opponent, matching \texttt{High-} and \texttt{Lowrolls} are removed and extra dice are rolled.
-
-Remove extra dice from \texttt{Stress}.
-
-Now you can mix all dice together and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
-
-If opponent knows the \texttt{Deny} feat they use it after you decided. 
-
-You can choose some other die as a damage die, but you can't reassign \texttt{Gambits}.
-
-Order of attack
-
-\paragraph{Impared.} d4
-
-\paragraph{Blast.} d4
-
-\subsection*{Damage.}
-
-\paragraph{Taking a scar.}
-
-Yap yap
-
-\paragraph{Sustaining an Injury.}
-
-yap ayp
+\paragraph{Blast} attacks target everybody in their area,
+rolling each separately.
 
 \end{multicols*}
 
 \newpage
-
-
-
-\newpage
-\section*{\centering Combat}
+\section*{\centering \fontsize{35}{45}\selectfont Combat}
 \vspace*{0.4 cm}
 
 \begin{multicols*}{2}
+
+\subsection*{Combat Damage.}
+
+The attack’s Damage is split between the
+target’s \texttt{Guard} and their \texttt{Vigor} at target's discretion, both are reduced by respective amount.
+
+If there was no overspill into \texttt{Vigor} then they evade the \texttt{Attack}.
+
+If it overspills into target’s \texttt{Vigor} -- they are Wounded.
+
+Check if damage to \texttt{Vigor} causes a \texttt{Scar} or an \texttt{Injury}. 
+
+\subsection*{Virtue loss.}
+
+Victims are only Slain, Mortally Wounded or Injured if the Virtue was reduced by \texttt{Combat Damage}, never as a result of Virtue Loss.
+
+At \texttt{0} \texttt{Vigor} you are \texttt{Exhausted} and cannot Attack if you have moved this turn.
+
+At \texttt{0} \texttt{Clarity} you are Exposed and treated as having \texttt{0} \texttt{Guard}.
+
+At \texttt{0} \texttt{Spirit} your attacks are Impaired rolling a single d4 only.
+
+\paragraph{Death.} Even the boldest Knight can die a sudden or ignoble death. Prepare yourself for this.
+When a Knight dies the player creates a new Knight and they are added to the Company as quickly as possible. 
 
 \subsection*{Feats}
 
@@ -314,28 +336,39 @@ The affected foe must be the same as the target of the attack, except for \textt
 For gambits other then \texttt{Bolster}, \texttt{Move} and \texttt{Patch a Wound} the target receives a \texttt{Vigor Save} to ignore the effect.
 
 \begin{itemize}[nosep]
-    \item \textbf{Bolster}
-    \item \textbf{Move}
-    \item \textbf{Repel}
-    \item \textbf{Stop}
-    \item \textbf{Impair}
-    \item \textbf{Trap}
-    \item \textbf{Dismount}
-    \item \textbf{Patch a Wound}
-    \item \textbf{Other effect}
+    \item \textbf{Bolster} the Attack for +1 total Damage
+    \item \textbf{Move} after the Attack, even if you already moved or are unable to move
+    \item \textbf{Repel} a foe away from you
+    \item \textbf{Stop} a foe from moving next turn
+    \item \textbf{Impair} a weapon on their next turn
+    \item \textbf{Trap} a shield until your next turn
+    \item \textbf{Dismount} a foe
+    \item \textbf{Patch a Wound} of yourself or an ally at arms range
+    \item \textbf{Other effect} of a similar level of impact
 \end{itemize}
 
 If a die of \texttt{8} or higher is used in melee then a Strong Gambit is performed and the attacker chooses one of the following:
 
 \begin{itemize}[nosep]
     \item \textbf{No Save} is granted to the target
-    \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield or weapon, or removing a helm. This does not increase the Damage from Bolster.
+    \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield or removing a helm. Bolster can't add more than \texttt{1} damage. 
 \end{itemize}
 
-\paragraph{Treating an Injury}. Yap yap, Gambit. Yap, yap, after combat is over.
+\textbf{Patching a Wound} \texttt{Gambit} allows one knight to tend to another one, or one knight to tend to themselves. 
+Tending knight rolls a \texttt{Clarity} check and, if they pass, the one untended \texttt{Injury} becomes tended and its consequences disappear.
+If the save fails, the \texttt{Injury} is still tended, but the target knight make \texttt{Vigor} save. 
+If this one also fails the injury increases in lethality, potentially killing a knight.`'
+
+\end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Lasting damage}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
 
 \subsection*{Scars} Each time a knight sustains damage that reduced their \texttt{Guard} to zero with overspill into \texttt{Vigor} they gain a \texttt{Scar}.
-To determine which particular one they get, roll damage die that did damage again and consult the table below.
+Roll damage die that did damage again and consult the table below.
 
 \begin{center}
   \rowcolors{2}{gray!25}{white}
@@ -360,29 +393,21 @@ To determine which particular one they get, roll damage die that did damage agai
     \end{tabular}
 \end{center}
 
-\end{multicols*}
-
-\newpage
-\section*{\centering Lasting damage}
-\vspace*{0.4 cm}
-
-\begin{multicols*}{2}
-
 \subsection*{Injuries} A body of a knight is tough and trained since childhood, but it can endure only so much. 
-When creating a knight, your roll for \texttt{Vigor} determines amount of \texttt{Serious and Lethal Injuries} they can sustain. 
+Dice that determine knight's \texttt{Vigor} also defines amount of \texttt{Serious and Lethal Injuries} they can sustain. 
 
-To track those injuries use \texttt{Injury Slots} that record name of the \texttt{Injury}, damage die that caused it and a \texttt{Consequence} that comes with it.
+To track those injuries use \texttt{Injury Slots} that record nature of the \texttt{Injury}, damage die that caused it and a \texttt{Consequence} that comes with it.
 
 There are several ways to get an \texttt{Injury} when a knight receives a hit. 
 
-\begin{itemize}
+\begin{itemize}[nosep]
     \item[\ding{170}] If a knight lost \texttt{6, 7, 8, or 9} \texttt{Vigor} through combat damage -- take a \texttt{Serious Injury}.
     \item[\textbf{\textdagger}] If a knight lost \texttt{10 or more} \texttt{Vigor} through combat damage -- take a \texttt{Lethal Injury}.
     \item[\ding{170}] If you lost half or more of your remaining \texttt{Vigor}, but not all of it - take a \texttt{Serious Injury} or fall unconscious
     \item[\textbf{\textdagger}] If you lost all your \texttt{Vigor} or more through combat damage - take a \texttt{Lethal Injury}
 \end{itemize}
 
-It might be the case that more than one condition applies, take the worst one. You should never take more than one \texttt{Injury} at a time. 
+If more than one condition applies, take the worst one. You should never take more than one \texttt{Injury} at a time. 
 Check for each \texttt{Attack} separately. 
 
 \subsection*{Consequences of an Injury.} When knight suffers an \texttt{Injury} it fills corresponding injury slot, recording a die that caused an injury. 
@@ -408,11 +433,24 @@ Each injury comes with consequences, after filling a slot roll \texttt{d4} and c
 \subsection*{Trauma.} When \texttt{Stress} reaches the limit a knight can sustain -- it resets and leaves a \texttt{Trauma} behind. 
 \texttt{Trauma} counts as a \texttt{Serious Injury} and can potentially cause a heart attack and kill a knight if they are out of \texttt{Injury slots}. 
 
+\end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Outside of combat}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
 \section*{Recovery}
 
-Mention Guard
+Only a swift moment of safety is required to recover one's \texttt{Guard}. 
 
-\subsection*{Short Rest.}
+\subsection*{Short Rest}
+
+Probably can restore 1 Virtue if the knight has 0.
+
+However, to recover spent \texttt{Focus} and reduce acquired \texttt{Stress} at least an hour of rest is needed. 
+
 
 \paragraph{Focus.} Yap yap, each short rest is less effective.
 
@@ -420,16 +458,63 @@ Mention Guard
 
 \subsection*{Long Rest}
 
+\paragraph{Virture restoration}. Sustenance, Remedy, Stimulants.
+
 \paragraph{Healing an Injury.} Yap yap, doctor, guard, quirks
 
 \paragraph{Coping with Trauma.} Referee decides how long it would persist and how it should be treated. By default, on the first morning after having a \texttt{Trauma} it heals itself, but leaves a permanent mark. 
 Acquire a \texttt{Quirk} as if a knight healed from an \texttt{Injury}. 
 
-\paragraph{Virture restoration}. Sustenance, Remedy, Stimulants.
+\subsection*{\centering Quirks}
 
+\paragraph{Bloodlust.} A visceral reaction to blood fuels strength, but lessens control. 
+You can upface one die of your weapon if you are wounded. However, if somebody is wounded, you can't engage them with nonlethal force
+
+\paragraph{Desensitized.} The things you saw made everything else bleak in compresent, you don't feel much ever since.
+When you treat an injury on the battlefield you roll with an additional \texttt{Focus}. However, you can't treat yourself.
+
+\paragraph{Thickskinned.} After you recovered, your skin changed. It became rougher and harder to pierce.
+You ignore first damage to your \texttt{Vigor} per combat if it is not larger than \texttt{1}. 
+However, when your injury is treated on the battlefield the roll is treated as if it is opposed with an additional \texttt{Focus}. 
+
+\paragraph{High pain tolerance.} Your body seems determine to never let you suffer again. 
+You can ignore up to one \texttt{Agony} consequence of your \texttt{injury}. 
+However, each time you roll 20 on `Vigor` check you lose 1 `Vigor`
+
+\paragraph{Masocistic.} Pain is unbearable, but somehow it's a good thing. You regain two \texttt{Focus} each time you receive a serious injury that is not from \texttt{Trauma}. 
+You regain all \texttt{Focus} if you receive a \texttt{Lethal Injury}. However, you can't reduce stress during \texttt{Short Rest}.
+
+\paragraph{Blade obsession.} At the beginning of each day, randomly determine a weapon you own that you are obsessed with. 
+You can upface any die of that weapon. However, each time you strike, you must strike with the weapon you are obsessed with. 
+You can't part with it, during combat it must be in your hand, otherwise at arms length at most.
+
+\paragraph{Gore facination.} You ignore \texttt{Distress} conditions of your \texttt{Injuries}. However, you must treat your \texttt{Injuries} by yourself. 
+
+\paragraph{Stressjuncky.} Each time you gain \texttt{Stress}, also gain \texttt{Focus}. 
+However, your maximum \texttt{Stress} is halved, rounded down. It can't go lower than \texttt{1}.
+
+\paragraph{Bloodthirsty.} Restore one \texttt{Focus} each time your hit reduces both \texttt{Vigor} and \texttt{Guard} with \texttt{Attack} you participate in. 
+However, gain one \texttt{Stress} when an attack you participate in does not reduce \texttt{Vigor}. If this point of \texttt{Stress} would cause \texttt{Trauma} gain no \texttt{Stress}.
+
+
+\end{multicols*}
 
 \newpage
-\section{Spellcasting}
+\section*{\centering \fontsize{35}{45}\selectfont Something to fill the gaps}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+
+\end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Spellcasting}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+
 
 Spellcasting resources is represented by a set of d6 dice equal to the value of \texttt{Clarity}. Each time you restore Spirit via indulging a \texttt{Passion}, you can regain up to two missing dice from this set.
 
@@ -448,9 +533,36 @@ Pick any number of dice, for each one which rolled for a maximum value you can a
 When caster rolls dice to cast a spell, additionally to casting they can choose half, rounded down, of remaining dice and discard the rest. 
 These chosen dice can be stored to cast spells later as if you rolled them. They persist until spent, but the total amount of dice(stored and unrolled) can't exceed the value of \texttt{Clarity}.
 
+\end{multicols*}
 
 \newpage
-\section{Witchcraft}
+\section*{\centering \fontsize{35}{45}\selectfont Spells}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+\paragraph{Heat Metal.} \lipsum[2]
+
+\paragraph{Magic missile.} \lipsum[2]
+
+\paragraph{Hex.} \lipsum[2]
+
+\paragraph{True Strike.} \lipsum[2]
+
+\paragraph{Shield.} \lipsum[2]
+
+\paragraph{Haste.} \lipsum[2]
+
+
+\end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Witchcraft}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+\newpage
 
 Witches cast spell as a manifestation of favors granted them by their patrons. So, logically, there should be different patrons with different sets of spells and different ways to please them.
 
@@ -471,48 +583,6 @@ Witches cast spell as a manifestation of favors granted them by their patrons. S
 \lipsum[7-8]
 
 \end{multicols*}
-
-
-\section*{\centering Appendix}
-\vspace{0.4cm}
-
-\subsection*{\centering Injury Quirks}
-
-\paragraph{Bloodlust.} \lipsum[2]
-
-\paragraph{Thickskinned.} \lipsum[2]
-
-\paragraph{Desensitized.} \lipsum[2]
-
-\paragraph{High pain tolerance.} \lipsum[2]
-
-\paragraph{Desperate gasp.} \lipsum[2]
-
-\paragraph{Blade obsession.} \lipsum[2]
-
-\paragraph{Gore facination.} \lipsum[2]
-
-\paragraph{Stressjuncky.} \lipsum[2]
-
-\paragraph{Bloodthirsty.} \lipsum[2]
-
-\newpage
-\section*{\centering Appendix}
-\vspace{0.4cm}
-
-\subsection*{\centering Spells}
-
-\paragraph{Heat Metal.} \lipsum[2]
-
-\paragraph{Magic missile.} \lipsum[2]
-
-\paragraph{Hex.} \lipsum[2]
-
-\paragraph{True Strike.} \lipsum[2]
-
-\paragraph{Shield.} \lipsum[2]
-
-\paragraph{Haste.} \lipsum[2]
 
 \end{document}
 
