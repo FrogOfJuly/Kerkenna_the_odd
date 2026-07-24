@@ -18,16 +18,19 @@ opacity=1,
 angle=0,
 color=black,
 contents={%
- \ifnum\value{page}<2 {} \else { 
+ \ifnum\value{page}<4 {
+    \ifnum\value{page}=2 {\includegraphics[width=\paperwidth,height=\paperheight]{media/kerkenna_map_stylized_left_with_corners.png}} \fi
+    \ifnum\value{page}=3 {\includegraphics[width=\paperwidth,height=\paperheight]{media/kerkenna_map_stylized_right_with_corners.png}} \fi
+ } \else { 
  \ifodd\value{page}
-    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade_flipped.png}
+    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade_white_flipped.png}
   \else
-    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade.png}
+    \includegraphics[width=\paperwidth,height=\paperheight]{media/background_handmade_white.png}
   \fi}\fi}}
 
 
 % TITLE
-\author{\textit{Written by FrogOfJuly}}
+\author{\textit{Written by FrogOfJuly \& Zentas}}
 \renewcommand\zinetitle{Kerkenna the Odd}
 
 \begin{document}
@@ -57,7 +60,7 @@ contents={%
 \subsection*{Getting Started}
     Pick some dice, a Referee and make them do a game for you.
 
-    Choose a knight, roll stats, pick gear and go for it.
+    Create a knight, pick gear and go for it.
 
 \subsection*{Scope}
     From one-shots to long adventures, but probably not a full campaign.
@@ -79,8 +82,10 @@ To \texttt{Upface} a die, find it in the sequence:
 And replace it with the next one. To \texttt{Downface} a die, replace it with previous one. 
 \texttt{d1} can't be \texttt{Downfaced} and \texttt{d12} can't be \texttt{Upfaced}. 
 
-You probably don't have a \texttt{d1} in your possession, 
-but you can easily model it by using its property of always rolling the same face with \texttt{1} on it.
+You probably don't have a \texttt{d1} in your possession, but as it always rolls \texttt{1}, you can use any small object to represent it.
+
+When you are \texttt{Upfacing} or \texttt{Downfacing} a die in an \texttt{Attack} roll do that before declaring \texttt{Focus} usage.
+
 
 \paragraph{Highroll \& Lowroll.}
 
@@ -104,6 +109,14 @@ Then proceed as if they were rolled together.
 
 
 \end{multicols*}
+
+\newpage
+
+\ % The empty page
+
+\newpage
+
+\ % The empty page
 
 \newpage
 \section*{\centering \fontsize{35}{45}\selectfont Creating a Knight}
@@ -253,11 +266,11 @@ Go through the following steps in order:
     \item Declare and spend \texttt{Focus}, target declares opposition and matching \texttt{High-} and \texttt{Lowrolls} are removed.
     \item All combatants that attack the same target roll simultaneously, but do not mix the dice together as \texttt{Focus} and \texttt{Stress} is applied separately.
     \item Remove extra dice added through \texttt{Focus}.
-    \item Declare \texttt{Stress} gain, remove matching \texttt{High-} and \texttt{Lowrolls} roll additional dice.
+    \item Declare \texttt{Stress} gain, target declares opposition, remove matching \texttt{High-} and \texttt{Lowrolls} roll additional dice.
     \item Remove extra dice from \texttt{Stress}.
     \item Now you can mix all dice together and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
     \item If the target or their nearby allies can \texttt{Deny} they may use it.
-    \item If the damage die is discarded - assign a new one, but \texttt{Gambits} can't be changed.
+    \item If the damage die is discarded - assign a new one, but \texttt{Gambit} allocations can't change. If no die remains, assign \texttt{d1}.
     \item Add any extra Damage from attackers who are \texttt{Bolstering} the Attack.
     \item Subtract the target’s total \texttt{Armour score}.
     \item The Attack causes that much \texttt{Combat Damage}.
@@ -438,56 +451,103 @@ Each injury comes with consequences, after filling a slot roll \texttt{d4} and c
 \end{multicols*}
 
 \newpage
-\section*{\centering \fontsize{35}{45}\selectfont Outside of combat}
+\section*{\centering \fontsize{35}{45}\selectfont Recovery}
 \vspace*{0.4 cm}
 
 \begin{multicols*}{2}
 
-\section*{Recovery}
+\subsection*{Breather}
 
-Only a swift moment of safety is required to recover one's \texttt{Guard}. 
+\paragraph{Guard} requires only a swift moment of safety to recover.
+
+\paragraph{Stress \& Focus} can also be restored quickly, but require consuming certain items.
+
+\begin{itemize}[nosep]
+    \item \textbf{Stimulant} for \texttt{Focus}
+    \item \textbf{Sedative} for \texttt{Stress}
+\end{itemize}
+If knight has no \texttt{Focus} left, they can recover \texttt{1} during a \texttt{breather} by acquiring one \texttt{Stress}.
 
 \subsection*{Short Rest}
 
-Probably can restore 1 Virtue if the knight has 0.
+In order to recover spent \texttt{Focus} and reduce acquired \texttt{Stress} at least an hour of rest is needed. 
 
-However, to recover spent \texttt{Focus} and reduce acquired \texttt{Stress} at least an hour of rest is needed. 
+It is not enough time to make a fire and cook food, but just right to treat injuries, have a talk or just zone out to process latest events.
 
+\paragraph*{Focus.} This time is effective in restoring \texttt{Focus}, but compounding weariness of the day will make itself noticed.
+Each time knight does an hour of \texttt{Short Rest} they restore \texttt{Focus} up to their maximum minus number of \texttt{Short Rests} they already had, including this one.
+The first \texttt{Short Rest} of the day restores maximum, but one \texttt{Focus}. The second -- maximum, but two and so on. 
+If it was a long day \texttt{Short Rest} does not provide any relief, but can never reduce \texttt{Focus}.
 
-\paragraph{Focus.} Yap yap, each short rest is less effective.
+\paragraph{Injuries} can be treated during \texttt{Short Rest} without rolls. Knights have basic medical skills to dress and clean wounds. Mark all \texttt{Injuries} as \texttt{Treated}.
 
-\paragraph{Stress.} Each time, half.
+\paragraph{Stress} restores differently, each time knights rest for at least an hour they reduce their \texttt{Stress} by half. 
+
+% Maybe spend one Focus to reduce half of the stress?
+% Maybe exactly like Focus, but reduction?
+
+\paragraph{Virture restoration}. During \texttt{Short Rest} it is possible to restore Virture, provided a knight has required supplies. 
+\begin{itemize}[nosep]
+    \item \textbf{Sustenance} for \texttt{Vigor}
+    \item \textbf{Tonic} for \texttt{Clarity}
+    \item \textbf{Sacrament} for \texttt{Spirit}
+\end{itemize} They are consumed upon usage and provide individual restoration by themselves, but can be shared with Company during \texttt{Short Rest}.
+
+If no supplies are used, a knight with \texttt{0} in some \texttt{Virtue} can restore it to \texttt{1}.
 
 \subsection*{Long Rest}
 
-\paragraph{Virture restoration}. Sustenance, Remedy, Stimulants.
+\paragraph{Virture restoration.}
 
-\paragraph{Healing an Injury.} Yap yap, doctor, guard, quirks
+Long rest in warm hospitality with healthy meal removes \texttt{Stress} and restores \texttt{Virtues} and \texttt{Focus}.
+
+\paragraph{Healing an Injury} removes it completely. This is a tricky endeavour which usually requires professional to accomplish and comes with a price tag. 
+
+Still, in dire circumstances knight can attempt to heal themselves or other knight: 
+\begin{enumerate}[nosep, leftmargin=*]
+    \item Roll a single \texttt{d20} against healing knight's \texttt{Clarity}, below or equal is a success. No \texttt{Focus} or \texttt{Stress} can be used, as knight has no mastery over craft of healing.
+    \item Roll a single \texttt{d20} against healed knight's \texttt{Vigor}, below or equal is a success. No \texttt{Focus} or \texttt{Stress} can be used.
+\end{enumerate}
+
+Only if both of the above rolls are successful, the knight is healed from an \texttt{Injury}. 
+
+\paragraph{Getting tougher and acquiring quirks.} After suffering through agony of medicine without painkillers a knight is relieved from an injury completely. 
+
+If total \texttt{Guard} of a knight is less than maximum value on a die that is marked on the \texttt{Injury Slot} roll it and gain that much more.
+
+Choose or make Referee choose a Quirk for you that is described below and permanently add it to your knight. 
+
 
 \paragraph{Coping with Trauma.} Referee decides how long it would persist and how it should be treated. By default, on the first morning after having a \texttt{Trauma} it heals itself, but leaves a permanent mark. 
 Acquire a \texttt{Quirk} as if a knight healed from an \texttt{Injury}. 
 
-\subsection*{\centering Quirks}
+\end{multicols*}
+
+\newpage
+\section*{\centering \fontsize{35}{45}\selectfont Quirks}
+\vspace*{0.4 cm}
+
+\begin{multicols*}{2}
 
 \paragraph{Bloodlust.} A visceral reaction to blood fuels strength, but lessens control. 
-You can upface one die of your weapon if you are wounded. However, if somebody is wounded, you can't engage them with nonlethal force
+You can \texttt{Upface} one die of your weapon if you are wounded. However, if somebody is wounded, you can't engage them with nonlethal force
 
 \paragraph{Desensitized.} The things you saw made everything else bleak in compresent, you don't feel much ever since.
 When you treat an injury on the battlefield you roll with an additional \texttt{Focus}. However, you can't treat yourself.
 
 \paragraph{Thickskinned.} After you recovered, your skin changed. It became rougher and harder to pierce.
-You ignore first damage to your \texttt{Vigor} per combat if it is not larger than \texttt{1}. 
+You ignore first damage to your \texttt{Vigor} per combat if it is not larger than \texttt{2}. 
 However, when your injury is treated on the battlefield the roll is treated as if it is opposed with an additional \texttt{Focus}. 
 
 \paragraph{High pain tolerance.} Your body seems determine to never let you suffer again. 
 You can ignore up to one \texttt{Agony} consequence of your \texttt{injury}. 
-However, each time you roll 20 on `Vigor` check you lose 1 `Vigor`
+However, each time you roll 20 on a \texttt{Vigor} check you lose \texttt{1} \texttt{Vigor}.
 
 \paragraph{Masocistic.} Pain is unbearable, but somehow it's a good thing. You regain two \texttt{Focus} each time you receive a serious injury that is not from \texttt{Trauma}. 
 You regain all \texttt{Focus} if you receive a \texttt{Lethal Injury}. However, you can't reduce stress during \texttt{Short Rest}.
 
 \paragraph{Blade obsession.} At the beginning of each day, randomly determine a weapon you own that you are obsessed with. 
-You can upface any die of that weapon. However, each time you strike, you must strike with the weapon you are obsessed with. 
+You can \texttt{Upface} any die of that weapon. However, each time you strike, you must strike with the weapon you are obsessed with. 
 You can't part with it, during combat it must be in your hand, otherwise at arms length at most.
 
 \paragraph{Gore facination.} You ignore \texttt{Distress} conditions of your \texttt{Injuries}. However, you must treat your \texttt{Injuries} by yourself. 
@@ -495,17 +555,13 @@ You can't part with it, during combat it must be in your hand, otherwise at arms
 \paragraph{Stressjuncky.} Each time you gain \texttt{Stress}, also gain \texttt{Focus}. 
 However, your maximum \texttt{Stress} is halved, rounded down. It can't go lower than \texttt{1}.
 
-\paragraph{Bloodthirsty.} Restore one \texttt{Focus} each time your hit reduces both \texttt{Vigor} and \texttt{Guard} with \texttt{Attack} you participate in. 
-However, gain one \texttt{Stress} when an attack you participate in does not reduce \texttt{Vigor}. If this point of \texttt{Stress} would cause \texttt{Trauma} gain no \texttt{Stress}.
+\paragraph{Sadistic.} Restore one \texttt{Focus} each time an \texttt{Attack} you participate in reduces both \texttt{Vigor} and \texttt{Guard}. 
+However, gain one \texttt{Stress} when an attack you participate in does not reduce \texttt{Vigor}. If this point of \texttt{Stress} would cause \texttt{Trauma} gain no \texttt{Stress} instead.
 
+\paragraph{Smile like no other.} You don't smile a lot, but when you do, people feel what you have been through. 
+You can \texttt{Downface} any die which use in Attack against you. 
+However, whenever you take \texttt{Clarity} save during socialization treat it if it was opposed by one additional \texttt{Focus}.
 
-\end{multicols*}
-
-\newpage
-\section*{\centering \fontsize{35}{45}\selectfont Something to fill the gaps}
-\vspace*{0.4 cm}
-
-\begin{multicols*}{2}
 
 
 \end{multicols*}
