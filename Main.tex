@@ -88,7 +88,7 @@ When you are \texttt{Upfacing} or \texttt{Downfacing} a die in an \texttt{Attack
 \paragraph{Repeated advantage \& disadvantage.}
 
 There are several types of rolls: \texttt{attack roll}, \texttt{Virtue Saves}, \texttt{Spellweaving Roll}, and more. 
-Many of them, including the named three, can be rolled with \texttt{Advantage} or \texttt{Disadvantage}. 
+Some of them, including the named three, can be rolled with \texttt{Advantage} or \texttt{Disadvantage}. 
 
 To roll with \texttt{Advantage}, add a duplicate of a die that already exists in the roll. 
 Perform a roll and then remove a die from it that shares the number of faces with the one added. 
@@ -97,7 +97,7 @@ Typically, you want to remove the lowest one, but ultimately it's for you to dec
 It is possible to roll with double \texttt{Advantage} by adding and then removing two duplicate dice.
 Naturally, this approach extends to any degree of \texttt{Advantage}. 
 
-To roll with \texttt{Disadvantage} -- do the same, but you must remove the best one from the roll. 
+To roll with \texttt{Disadvantage} -- do the same, but you must remove the best one(least one for \texttt{Virtue Checks}, highest from \texttt{Attack Rolls}) from the roll. 
 
 If there is a need to simultaneously roll with \texttt{Advantage} and \texttt{Disadvantage}, remove matching pairs of "-antages" until only one of them remains.
 
@@ -301,18 +301,26 @@ If it overspills into target’s \texttt{Vigor} -- they are Wounded.
 
 Check if damage to \texttt{Vigor} causes a \texttt{Scar} or an \texttt{Injury}. 
 
+If it does cause an Injury - fill the \texttt{Injury slot} of corresponding or greater severity, record damage die that dealt it and apply affliction(p. 8).
+If a knight is injured and has no required injury slot left, they are \textbf{Slain}.
+
+Each injury could be:
+\begin{itemize}[nosep]
+    \item \textbf{Untreated} \texttt{injury} applies \texttt{Affliction}
+    \item \textbf{Treated} \texttt{injury} occupies the slot, but does not apply \texttt{Affliction}
+    \item \textbf{Healed} \texttt{injury} is removed entirely
+\end{itemize}
+
+
 \subsection*{Virtue loss.}
 
-Victims are only Slain, Mortally Wounded or Injured if the Virtue was reduced by \texttt{Combat Damage}, never as a result of Virtue Loss.
+Victims are only Slain, Wounded or Injured if the Virtue was reduced by \texttt{Combat Damage}, never as a result of Virtue Loss.
 
 At \texttt{0} \texttt{Vigor} you are \texttt{Exhausted} and cannot Attack if you have moved this turn.
 
 At \texttt{0} \texttt{Clarity} you are Exposed and treated as having \texttt{0} \texttt{Guard}.
 
 At \texttt{0} \texttt{Spirit} your attacks are Impaired, rolling a single d4 only.
-
-\paragraph{Death.} Even the boldest Knight can die a sudden or ignoble death. Prepare yourself for this.
-When a Knight dies, the player creates a new Knight, and they are added to the Company as quickly as possible. 
 
 \subsection*{Feats}
 
@@ -326,20 +334,20 @@ they rest.
 \begin{itemize}[nosep]
     \item Use before rolling a melee \texttt{Attack}.
     \item The \texttt{Attack} gains either \texttt{+1d12} or \texttt{Blast}.
-    \item Pass \texttt{Vigor} check or become \texttt{Fatigued}.
+    \item Pass \texttt{Vigor Save} or become \texttt{Fatigued}.
 \end{itemize}
 \paragraph{Focus.} \textit{Create an opening to exploit} 
 \begin{itemize}[nosep]
     \item Use after rolling an \texttt{Attack}.
     \item Perform a Gambit without using a die.
-    \item Pass \texttt{Clarity} check or become \texttt{Fatigued}.
+    \item Pass \texttt{Clarity Save} or become \texttt{Fatigued}.
 \end{itemize}
 
 \paragraph{Deny.} \textit{Rebuff an attack before it lands} 
 \begin{itemize}[nosep]
     \item Use after an \texttt{Attack} roll against you or an ally within arm’s reach.
     \item Discard one Attack die from the roll.
-    \item Pass \texttt{Spirit} check or become \texttt{Fatigued}.
+    \item Pass \texttt{Spirit Save} or become \texttt{Fatigued}.
 \end{itemize}
 
 
@@ -370,9 +378,12 @@ If a die of \texttt{8} or higher is used in melee, then a Strong Gambit is perfo
 \end{itemize}
 
 \paragraph{Patching a Wound} \texttt{Gambit} allows one knight to tend to another one, or one knight to tend to themselves. 
-Tending knight rolls a \texttt{Clarity} check and, if they pass, the one untended \texttt{Injury} becomes tended, and its consequences disappear.
-If the save fails, the \texttt{Injury} is still tended, but the target knight makes a \texttt{Vigor} save. 
+Tending knight rolls a \texttt{Clarity Save} and the one untended \texttt{Injury} becomes tended. 
+If that save failed the targeted knight must survive the pain of misjudged treatment, by passing a \texttt{Vigor Save}. 
 If this one also fails, the injury increases in lethality, potentially killing a knight.
+
+\paragraph{Death.} Even the boldest Knight can die a sudden or ignoble death. Prepare yourself for this.
+% When a Knight dies, the player creates a new Knight, and they are added to the Company as quickly as possible. 
 
 \end{multicols*}
 
@@ -412,7 +423,7 @@ Roll a damage die that did damage again and consult the table below.
 
 A knight's body is tough and trained since childhood, but it can endure only so much. 
 Dice that determine a knight's \texttt{Vigor} also define the amount of \texttt{Serious and Lethal Injuries} they can sustain. 
-To track those injuries, use \texttt{Injury Slots} that record the nature of the \texttt{Injury}, the damage die that caused it, and its \texttt{Consequence}.
+To track those injuries, use \texttt{Injury Slots} that record the nature of the \texttt{Injury}, the damage die that caused it, and its \texttt{Affliction}.
 
 A knight gets an \texttt{Injury} according to conditions below. Each \texttt{Attack} causes one \texttt{Injury} at most. 
 
@@ -434,7 +445,7 @@ Each injury comes with \texttt{Afflictions}; after filling a slot, roll \texttt{
   \label{injury_cons}
     \begin{tabular}{|c|p{6.4cm}|}
         \hline
-        \textbf{Roll d4} & \textbf{Afflication} \\
+        \textbf{Roll d4} & \textbf{Affliction} \\
         \hline
         \texttt{1} & The cut is deep, you are \texttt{Bleeding}:\newline lose \texttt{1} \texttt{Vigor} when your turn starts\\
         \texttt{2} & Pain is unbearable, you are in \texttt{Agony}:\newline lose \texttt{1} \texttt{Clarity} when your turn starts\\
@@ -542,7 +553,7 @@ However, when your injury is treated on the battlefield, the roll is treated as 
 
 \paragraph{High pain tolerance.} Your body seems determined to never let you suffer again. 
 You can ignore up to one \texttt{Agony} consequence of your \texttt{injury}. 
-However, each time you roll 20 on a \texttt{Vigor} check, you lose \texttt{1} \texttt{Vigor}.
+However, each time you roll 20 on a \texttt{Vigor Save}, you lose \texttt{1} \texttt{Vigor}.
 
 \paragraph{Masochistic.} Pain is unbearable, but somehow it's a good thing. You regain two \texttt{Focus} each time you receive a serious injury that is not from \texttt{Trauma}. 
 You regain all \texttt{Focus} if you receive a \texttt{Lethal Injury}. However, you can't reduce stress during \texttt{Short Rest}.
@@ -682,7 +693,7 @@ Treasures celebrations that bring sincere joy for those who participate.
     \item[\ding{108}] \textbf{Last call bell.} You start a dance, a trick or any other performance. As long as you are doing it all doors to the room you are it, except maybe one, close and lock themselves.
     \item[\ding{108}] \textbf{Curtain drop.} You bow down as if you just ended a performance. Smoke or water mist envelopes you for a few seconds, giving you and up to one other person near you an opportunity to escape combat.
     \item[\ding{108}] \textbf{Invisible helper.} You summon an invisible, almost immaterial creature that obeys your mental commands. It can move and carry objects that a determined child can, it is easily scared of violence and likes sweets. Disappears when you fall unconscious.
-    \item[\ding{108}] \textbf{Failed Rehearsal.} When you fail a \texttt{Spirit} or \texttt{Clarity} check, you can immediately retry it. Each save can benefit from this spell only once.
+    \item[\ding{108}] \textbf{Failed Rehearsal.} When you fail a \texttt{Spirit Save} or \texttt{Clarity Save}, you can immediately retry it. Each save can benefit from this spell only once.
     \item[\ding{108}] \textbf{Disguise Voice.} Make your voice appear as somebody else's whom you heard within at least one conversation.
 \end{itemize}
 \paragraph{2 Favour spells}
@@ -697,7 +708,7 @@ Treasures celebrations that bring sincere joy for those who participate.
 \end{itemize}
 \paragraph{3 Favour spells}
 \begin{itemize}[nosep]
-    \item[\ding{108}] \textbf{Let me try one more time.} When you fail a check targeted by Failed Rehearsal, you can retry one more time.
+    \item[\ding{108}] \textbf{Let me try one more time.} When you fail a \texttt{Save} targeted by \textit{Failed Rehearsal}, you can retry one more time.
     \item[\ding{108}] \textbf{All doors are open for me.} Opens any non-magically locked door
     \item[\ding{108}] \textbf{You are an actor too.} For an hour or until harmed, the target thinks that they are somebody else \textbf{they} have a strong impression of. 
  The target acts according to their own understanding of that entity. 
@@ -744,8 +755,8 @@ Knows about improper burials and rewards those who make peace with the dead.
  Branches can grapple your enemies, fix objects, and obstruct passage. 
  Without water and soil, it dies soon after you leave, expending all its resources. 
  For example, it takes 10 minutes to make a wooden door frame impassible, but only several seconds to make a wooden door impossible to open. 
- In combat, it immobilizes enemies on the round of casting and impairs weapons until escape(\texttt{Vigor} check) on later turns.
-    \item[\ding{108}] \textbf{It hurts, I know.} Transfer a \texttt{Trauma} from one willing creature to another willing creature of roughly the same conciseness level.
+ In combat, it immobilizes enemies on the round of casting and impairs weapons until escape(\texttt{Vigor Save}) on later turns.
+    \item[\ding{108}] \textbf{It hurts, I know.} Transfer a \texttt{Trauma} from one willing creature to another willing creature of roughly the same consciousness level.
 \end{itemize}
 
 \paragraph{3 Favour Spells.}
