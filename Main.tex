@@ -743,7 +743,7 @@ Knows about improper burials and rewards those who make peace with the dead.
     \item[\ding{108}] \textbf{Be not afraid.} Talk with animals: they understand you, you understand them.
     \item[\ding{108}] \textbf{Tell me your story.} Talk with the dead, provided you have something they owned
     \item[\ding{108}] \textbf{Forest, obscure me.} As long as there is enough foliage around, it shifts to provide cover, making you and maybe one of those with you almost impossible to find.
-    
+    \item[\ding{108}] \textbf{I've never said that I am done. } You move fast and your weapon moves almost on its own. For remainder of the combat, each time you \texttt{Attack} you can do an additional \texttt{Gambit} without expending a die. 
 \end{itemize}
 
 \paragraph{2 Favour Spells.}
@@ -757,6 +757,7 @@ Knows about improper burials and rewards those who make peace with the dead.
  For example, it takes 10 minutes to make a wooden door frame impassible, but only several seconds to make a wooden door impossible to open. 
  In combat, it immobilizes enemies on the round of casting and impairs weapons until escape(\texttt{Vigor Save}) on later turns.
     \item[\ding{108}] \textbf{It hurts, I know.} Transfer a \texttt{Trauma} from one willing creature to another willing creature of roughly the same consciousness level.
+    \item[\ding{108}] \textbf{Vesna will guide you. } Choose a willing creature, next time they attempt a roll with at least \texttt{1} \texttt{Focus} -- they roll as if an additional \texttt{Focus} was spent.
 \end{itemize}
 
 \paragraph{3 Favour Spells.}
@@ -766,7 +767,7 @@ Knows about improper burials and rewards those who make peace with the dead.
     \item[\ding{108}] \textbf{Look, we are alike.} You touch a willing animal and assume some of its traits: talons, fins, teeth, fur, etc. You choose what suits you best. 
  You can share these traits with somebody if you keep physical skin contact with them for the whole time. 
  Effect lasts until dismissed.
-    \item[\ding{108}] \textbf{Let me take all the pain.} You touch a willing creature and transfer any of their \texttt{Injuries} to yourself.
+    \item[\ding{108}] \textbf{Let me take all the pain.} You touch a willing creature and transfer any one of their \texttt{Injuries} to yourself.
 \end{itemize}
 
 \newpage
@@ -793,7 +794,7 @@ By now we live, but soon comes the day we perish under the iron mace of the Aest
 
 \end{multicols*}
 
-\renewcommand\zinetitle{Kerkenna the Odd: Appendix}
+\renewcommand\zinetitle{Appendix}
 
 \newpage
 \section*{\centering \fontsize{35}{45}\selectfont Sickness \& Malady}
@@ -855,39 +856,53 @@ Another day you find another ulcer on your skin, you feel neither pain, nor dist
 
 \subsection*{Weavering Parasite}
 
-% Stored in a translucent ampule with nutritious goo it sleeps peacefully. 
-% Until one day the craving soul unleashes it onto their own body. 
-
-Parasite awakes and digs into flesh. 
-After moment of -- pain its gone. Unnatural motions of muscles and skin are the only evidence of where it is. 
-In a day it reaches brain and hatches. Victim wakes up and notices that they can sense more of the arcane that they were able before. 
+Parasite awakes and digs into your body. 
+Flash of agony and its gone. Unnatural motions of muscles and skin are the only evidence of where it is. 
+In a day it reaches your brain and hatches. You can sense more of the arcane than ever before: learn \textit{Detect Magic} spell. 
 However, thoughts become mirky and mind drowns in fog. 
 
 You lose \texttt{1} \textit{maximum} \texttt{Clarity} and now have a \texttt{Spellweaving Pool} with a \texttt{d4} in it.
 
 \begin{itemize}[nosep]
-    \item Each morning you must feed the parasite. After waking up -- roll a die from your \texttt{Spellweaving Pool}, lose that much \texttt{Clarity}. 
+    \item Each morning you must feed the parasite. 
+    After waking up -- roll a die from your \texttt{Spellweaving Pool}, lose that much \texttt{Clarity}. 
+    Restore \texttt{1} spent die from the pool.
     \item Record total amount of \texttt{Clarity} lost this way. 
-    For each \texttt{20} \texttt{Clarity} lose \texttt{1} \textit{maximum} \texttt{Clarity} and add an additional \texttt{d4} to the pool. 
+    For each \texttt{20} \texttt{Clarity} lost - lose \texttt{1} \textit{maximum} \texttt{Clarity} and add an additional \texttt{d4} to the pool. 
     \texttt{Upface} it once for each other die in the pool.
     \item When you have a \texttt{d12} added this way parasite is fully matured and stops feeding.
 
 \end{itemize}
 
-
-
-% TODO: adds spellcasting in exchange for clarity. When you feed it enough, it cocoons and emerges more potent. 
-% TODO: it might be showcased as faceness of spellcasting dice, more spells or the size of spellweaving pool
-
-
-
-
 \end{multicols*}
 
 
 \newpage
-\section*{\centering \fontsize{35}{45}\selectfont Appendix}
-\vspace*{0.4 cm}
+% \section*{\centering \fontsize{35}{45}\selectfont Appendix}
+% \vspace*{0.4 cm}
+
+\begin{multicols*}{2}
+
+    \subsection*{Detached Soul}
+
+    When your body takes critical damage, instead of succumbing to injuries and pain your soul detaches and continues to fight.
+
+    \begin{itemize}[nosep]
+        \item When you can't allocate a new \texttt{Injury} you don't die. Instead your body collapses and your ghostly form emerges.
+        \item It has \texttt{1} \texttt{Vigor}, \texttt{0} Armour, but otherwise keeps your parameters. 
+              Physical damage applies to you the same, but is targets \texttt{Spirit} instead of \texttt{Vigor}. 
+        \item You keep your \texttt{Traumas}, but not \texttt{Injuries}. For damage to \texttt{Spirit} do the same \texttt{Injury} calculations as for \texttt{Vigor}, but receive \texttt{Trauma} instead. If you can't fit a new \texttt{Trauma} -- you are \textbf{Slain}.
+        \item You can't be grappled, pushed or moved and you can't do the same to interact with objects. So, you can't perform \texttt{Gambits} that require physical interaction. However, you can \texttt{Bolster} just fine. 
+        \item You don't do physical damage, but you can give \texttt{Trauma} if you would have dealt enough damage to cause an \texttt{Injury}.       
+        \item You can't use \texttt{Deny} \texttt{Feat}, but gain ability to go through physical objects. 
+              There is no limit, but when there is no light you can lose sense of direction and become trapped.
+        \item If your physical body dies -- you persist, but its easier to return back to your own mortal vessel than to find a new one. There are no obvious ways to do either though.
+    \end{itemize}
+
+    You can choose its appearance and keep two pieces of your gear and one weapon. 
+
+    
+\end{multicols*}
 
 \end{document}
 
