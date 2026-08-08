@@ -219,6 +219,15 @@ Spiked shields turn that die into \texttt{d6}.
 
 \begin{multicols*}{2}
 
+\paragraph{Saves.}
+
+To pass a Save, roll a \texttt{d20} equal or below the
+relevant \texttt{Virtue}. Failure means negative
+consequences, not always a failed action.
+
+\paragraph{Turns.} A turn is enough time to Move and then
+perform an Action, always in that order.
+
 \subsection*{Focus \& Stress}
 
 There are two important resources each knight has:
@@ -250,15 +259,6 @@ If it is, set it to zero and the character suffers a \texttt{Trauma}(p.\pageref*
 
 \newcolumn
 
-\paragraph{Saves.}
-
-To pass a Save, roll a \texttt{d20} equal or below the
-relevant \texttt{Virtue}. Failure means negative
-consequences, not always a failed action.
-
-\paragraph{Turns.} A turn is enough time to Move and then
-perform an Action, always in that order.
-
 \subsection*{Attacks}
 
 Take the \texttt{Weapon Dice} noted on your weapon(s), shield, and granted by bonuses.
@@ -272,10 +272,12 @@ Go through the following steps in order:
     \item Remove extra dice from \texttt{Stress}.
     \item Now you can mix all dice and declare which one is used as a damage die and which are spent on \texttt{Gambits}.
     \item If the target or their nearby allies can \texttt{Deny}, they may use it.
-    \item If the damage die is discarded, assign a new one, but \texttt{Gambit} allocations can't change. If no die remains, assign \texttt{d1}.
-    \item Add any extra Damage from attackers who are \texttt{Bolstering} the Attack.
+    \item Resolve \texttt{Gambits} that may result in more damage dice(e.g. \texttt{Dismount}).
+    \item If the damage die is discarded -- assign a new one, possibly cancelling a \texttt{Gambit}. Other \texttt{Gambit} allocations can't change. 
+    \item Add any extra \texttt{Damage} from attackers who are \texttt{Bolstering} the Attack.
     \item Subtract the target’s total \texttt{Armour score}.
-    \item The Attack causes that much \texttt{Combat Damage}.
+    \item The Attack causes that much \texttt{Damage}.
+    \item Resolve non-damaging \texttt{Gambits}.
 \end{enumerate}
 }
 
@@ -293,16 +295,17 @@ rolling each separately.
 
 \begin{multicols*}{2}
 
-\subsection*{Combat Damage.}
+\subsection*{Damage.}
+\label{sec:wounded}
 
-The attack’s Damage is split between the
+The attack’s \texttt{Damage} is split between the
 target’s \texttt{Guard} and their \texttt{Vigor} at the target's discretion; both are reduced by the respective amount.
 
 If there was no overspill into \texttt{Vigor}, then they evade the \texttt{Attack}.
 
-If it overspills into target’s \texttt{Vigor} -- they are Wounded.
+If it overspills into target’s \texttt{Vigor} -- they are \texttt{Wounded}.
 
-Check if damage to \texttt{Vigor} causes a \texttt{Scar} or an \texttt{Injury}.
+Check if \texttt{Damage} to \texttt{Vigor} causes a \texttt{Scar} or an \texttt{Injury}.
 
 If it does cause an Injury -- fill the \texttt{Injury slot} of corresponding or greater severity, record damage die that dealt it and apply \texttt{Affliction} (p.\pageref*{sec:affliction}).
 If a knight is injured and has no required injury slot left, they are \textbf{Slain}.
@@ -317,7 +320,7 @@ Each injury could be:
 
 \subsection*{Virtue loss.}
 
-Victims are only Slain, Wounded or Injured if the Virtue was reduced by \texttt{Combat Damage}, never as a result of Virtue Loss.
+Victims are only \textbf{Slain}, \texttt{Wounded} or \texttt{Injured} if the Virtue was reduced by \texttt{Damage}, never as a result of \emph{Virtue Loss}.
 
 At \texttt{0} \texttt{Vigor} you are \texttt{Exhausted} and cannot Attack if you have moved this turn.
 
@@ -362,13 +365,13 @@ The affected foe must be the same as the target of the attack, except for \textt
 For gambits other than \texttt{Bolster}, \texttt{Move} and \texttt{Patch a Wound}, the target receives a \texttt{Vigor Save} to ignore the effect.
 
 \begin{itemize}[nosep]
-    \item \textbf{Bolster} the Attack for +1 total Damage
+    \item \textbf{Bolster} the \texttt{Attack} for +1 total \texttt{Damage}
     \item \textbf{Move} after the Attack, even if you already moved or are unable to move
     \item \textbf{Repel} a foe away from you
     \item \textbf{Stop} a foe from moving next turn
     \item \textbf{Impair} a weapon on their next turn
     \item \textbf{Trap} a shield until your next turn
-    \item \textbf{Dismount} a foe
+    \item \textbf{Dismount} a foe(+d6 to damage dice)
     \item \textbf{Patch a Wound} of yourself or an ally at arms range
     \item \textbf{Other effect} of a similar level of impact
 \end{itemize}
@@ -377,7 +380,7 @@ If a die of \texttt{8} or higher is used in melee, then a Strong Gambit is perfo
 
 \begin{itemize}[nosep]
     \item \textbf{No Save} is granted to the target
-    \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield, or removing a helm. Bolster can't add more than \texttt{1} damage.
+    \item \textbf{Greater effect} such as disarming an item, breaking a wooden shield, or removing a helm. Bolster can't add more than \texttt{1} \texttt{Damage}.
 \end{itemize}
 
 \paragraph{Patching a Wound} \texttt{Gambit} allows one knight to tend to another one, or one knight to tend to themselves.
@@ -396,8 +399,8 @@ If this one also fails, the injury is still treated, but increases in lethality,
 
 \begin{multicols*}{2}
 
-\subsection*{Scars} Each time a knight sustains damage that reduced their \texttt{Guard} to zero with overspill into \texttt{Vigor} they gain a \texttt{Scar}.
-Roll a damage die that did damage again and consult the table below.
+\subsection*{Scars} Each time a knight sustains \texttt{Damage} that reduced their \texttt{Guard} to zero with overspill into \texttt{Vigor} they gain a \texttt{Scar}.
+Roll a damage die that did that \texttt{Damage} again and consult the table below.
 
 \begin{center}
   \rowcolors{2}{gray!25}{white}
@@ -432,10 +435,10 @@ To track those injuries, use \texttt{Injury Slots} that record the nature of the
 A knight gets an \texttt{Injury} according to conditions below. Each \texttt{Attack} causes one \texttt{Injury} at most.
 
 \begin{itemize}[nosep]
-    \item[\ding{170}] If a knight lost \texttt{6, 7, 8, or 9} \texttt{Vigor} through combat damage -- take a \texttt{Serious Injury}.
-    \item[\textbf{\textdagger}] If a knight lost \texttt{10 or more} \texttt{Vigor} through combat damage -- take a \texttt{Lethal Injury}.
+    \item[\ding{170}] If a knight lost \texttt{6, 7, 8, or 9} \texttt{Vigor} through \texttt{Damage} -- take a \texttt{Serious Injury}.
+    \item[\textbf{\textdagger}] If a knight lost \texttt{10 or more} \texttt{Vigor} through \texttt{Damage} -- take a \texttt{Lethal Injury}.
     \item[\ding{170}] If a knight lost half or more of their remaining \texttt{Vigor}, but not all of it -- take a \texttt{Serious Injury}.
-    \item[\textbf{\textdagger}] If a knight lost all their \texttt{Vigor} or more through combat damage -- take a \texttt{Lethal Injury}.
+    \item[\textbf{\textdagger}] If a knight lost all their \texttt{Vigor} or more through \texttt{Damage} -- take a \texttt{Lethal Injury}.
 \end{itemize}
 If more than one condition applies, take the worst one.
 
@@ -511,7 +514,7 @@ This is how life is sometimes.
 \subsection*{Long Rest}
 
 A proper rest in a bed, with a roof overhead and a hot meal in relative safety.
-No armour is worn, combat weapons are stored away.
+No armour is worn, weapons are stored away.
 You have time to be with yourself or with those around you and forget, at least of a little bit, about all the burdens waiting for you outside.
 
 This takes a night, a day, and another night to have full effect.
@@ -606,14 +609,14 @@ For example, spells usually are not directly marked by their caster and are not 
 
 \paragraph{Heat Metal.} Intricate ladder of arcane pulses rapidly heats metal until it glows red hot.
 Pulses should be chained together carefully; pick no less than three dice with consecutive values.
-If it is a piece of armour, the wearer takes damage equal to the sum of chosen dice.
+If it is a piece of armour, the wearer takes \texttt{Damage} equal to the sum of chosen dice.
 If it is a weapon, the bearer chooses to drop it or persevere through pain, taking half of the sum of the chosen dice.
-Any damage from this spell ignores \texttt{Guard}.
+Any \texttt{Damage} from this spell ignores \texttt{Guard}.
 
 \paragraph{Magic missile.}
 Identical glowing bolts launch towards chosen targets, piercing bone and muscle.
 Pick any number of dice with the same value rolled.
-You can pick a different target for each bolt; it deals damage equal to the rolled value.
+You can pick a different target for each bolt; it deals \texttt{Damage} equal to the rolled value.
 
 \paragraph{Hex.}
 A curse of misfortune impairs defense and makes the target more vulnerable.
@@ -815,9 +818,9 @@ However, despite all the differences, you feel the same. Maybe a bit duller to t
 At last, you notice that your wounds are not healing.
 
 \begin{itemize}[nosep]
-    \item You don't lose Vigor. Since when you discover this change in yourself, record damage you receive that would have been subtracted from your \texttt{Vigor}.
-    \item For each 3 points of damage accumulated this way treat your maximum \texttt{Vigor} as if it is reduced by \texttt{1}. When it reaches \texttt{0} your body loses structural integrity and dissolves to dust.
-    \item You accumulate \texttt{Injuries} based on damage received and wither away when you are out of \texttt{Injury slots}.
+    \item You don't lose Vigor. Since when you discover this change in yourself, record \texttt{Damage} you receive that would have been subtracted from your \texttt{Vigor}.
+    \item For each 3 points of \texttt{Damage} accumulated this way treat your maximum \texttt{Vigor} as if it is reduced by \texttt{1}. When it reaches \texttt{0} your body loses structural integrity and dissolves to dust.
+    \item You accumulate \texttt{Injuries} based on \texttt{Damage} received and wither away when you are out of \texttt{Injury slots}.
     \item You can kinda feel how your insides should be arranged and don't feel much pain, so you can mend yourself from two \texttt{Injuries} during one \texttt{Long Rest} without rolls.
 \end{itemize}
 If you find a puppet master that will agree to such outstanding demand, they could try to patch your body to restore its former shape reducing the recorded \texttt{Damage}.
@@ -877,10 +880,10 @@ You lose \texttt{1} \textit{maximum} \texttt{Clarity} and now have a \texttt{Spe
     \begin{itemize}[nosep]
         \item When you can't allocate a new \texttt{Injury} you don't die. Instead your body collapses and your ghostly form emerges.
         \item It has \texttt{1} \texttt{Vigor}, \texttt{0} Armour, but otherwise keeps your parameters.
-              Physical damage applies to you the same, but is targets \texttt{Spirit} instead of \texttt{Vigor}.
+              Physical \texttt{Damage} applies to you the same, but is targets \texttt{Spirit} instead of \texttt{Vigor}.
         \item You keep your \texttt{Traumas}, but not \texttt{Injuries}. For damage to \texttt{Spirit} do the same \texttt{Injury} calculations as for \texttt{Vigor}, but receive \texttt{Trauma} instead. If you can't fit a new \texttt{Trauma} -- you are \textbf{Slain}.
         \item You can't be grappled, pushed or moved and you can't do the same to interact with objects. So, you can't perform \texttt{Gambits} that require physical interaction. However, you can \texttt{Bolster} just fine.
-        \item You don't do physical damage, but you can give \texttt{Trauma} if you would have dealt enough damage to cause an \texttt{Injury}. Additionally, ignore armour for \texttt{Injury} calculations.
+        \item You don't do physical \texttt{Damage}, but you can give \texttt{Trauma} if you would have dealt enough damage to cause an \texttt{Injury}. Additionally, ignore armour for \texttt{Injury} calculations.
         \item You can't use \texttt{Deny} \texttt{Feat}, but gain ability to go through physical objects.
               There is no limit, but when there is no light you can lose sense of direction and become trapped.
         \item If your physical body dies -- you persist, but its easier to return back to your own mortal vessel than to find a new one. There are no obvious ways to do either though.
@@ -927,13 +930,13 @@ Once the splitting event is occurred, you switch to the new personality immediat
 \begin{multicols*}{2}
 
 \paragraph{Bloodlust.} A visceral reaction to blood fuels strength, but lessens control.
-You can \texttt{Upface} one die of your weapon if you are wounded. However, if somebody is wounded, you can't engage them with nonlethal force.
+You can \texttt{Upface} one die of your weapon if you are \texttt{Wounded}(p.\pageref*{sec:wounded}). However, if somebody is wounded, you can't engage them with nonlethal force.
 
 \paragraph{Desensitized.} The things you saw made everything else bleak in comparison; you don't feel much ever since.
 When you treat an injury on the battlefield, you roll with an additional \texttt{Focus}. However, you can't treat yourself.
 
 \paragraph{Thick-skinned.} After you recovered, your skin changed. It became rougher and harder to pierce.
-You ignore the first damage to your \texttt{Vigor} per combat if it is not larger than \texttt{2}.
+You ignore the first \texttt{Damage} to your \texttt{Vigor} per combat if it is not larger than \texttt{2}.
 However, when your injury is treated on the battlefield, the roll is treated as if it is opposed with an additional \texttt{Focus}.
 
 \paragraph{High pain tolerance.} Your body seems determined to never let you suffer again.
